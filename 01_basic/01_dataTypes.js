@@ -70,6 +70,34 @@ console.log(typeof -Infinity)
 console.log(typeof 0)  // number
 console.log(typeof 1)   // number
 
+// object => {}
+// array => []
+// function => function
+// date => new Date()
+// regex => new RegExp()
+// map => new Map()
+// set => new Set()
+// weakmap => new WeakMap()
+// weakset => new WeakSet()
+// promise => new Promise()
+// generator => function* () { }
+// class => class { }   
+// module => import/export
+// buffer => new Buffer()
+// arraybuffer => new ArrayBuffer()
+// sharedarraybuffer => new SharedArrayBuffer()
+// dataview => new DataView()
+// typedarray => new Int8Array()
+// int8array => new Int8Array()
+// uint8array => new Uint8Array()
+// int16array => new Int16Array()
+// uint16array => new Uint16Array()
+// int32array => new Int32Array()
+
+
+
+
+
 
 console.log(typeof {})  
 console.log(typeof []) // object
@@ -96,7 +124,7 @@ console.log(typeof new Float32Array())
 console.log(typeof new Float64Array())  // object
 
 
-
+// console.table
 console.table({ name, age, isLogin })  // object
 console.table([name, age, isLogin])    // array
 console.table({ name: "Amit kumar", age: 25, isLogin: true })  // object
