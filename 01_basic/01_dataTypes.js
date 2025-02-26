@@ -17,7 +17,8 @@ let isLogin = true
 
 // number => 2 to power 53
 // bigint
-// string =>
+// string => ""
 // boolean
+
 
 
