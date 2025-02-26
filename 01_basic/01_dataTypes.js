@@ -5,4 +5,10 @@
 // code redability that should high 
 console.log(3 + 3);
 console.log("Amit kumar");
+/*
+ documentation 
+--> tc39.com
+-->mdn
+*/
+
 
