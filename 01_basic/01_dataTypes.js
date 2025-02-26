@@ -9,6 +9,7 @@ console.log("Amit kumar")
 
 
 
+
 // data types in JS     
 // number => 2 to power 53
 // bigint
@@ -124,6 +125,8 @@ console.table({ name, age, isLogin })  // object
 console.table([name, age, isLogin])    // array
 console.table({ name: "Amit kumar", age: 25, isLogin: true })  // object
 console.table([name, age, isLogin])    // array
+
+console.table({ })
 
 
 
