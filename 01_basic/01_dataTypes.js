@@ -5,16 +5,9 @@
 
 // code redability that should high 
 console.log(3 + 3);
-console.log("Amit kumar");
-/*
- documentation 
---> tc39.com
--->mdn
-*/
+console.log("Amit kumar")
 
-let name = "Amit kumar"
-let age = 25
-let isLogin = true
+
 
 // data types in JS     
 // number => 2 to power 53
@@ -38,7 +31,8 @@ let isLogin = true
 // class
 // module
 // buffer
-// arraybuffer  // binary data
+// arraybuffer  
+// binary data
 // sharedarraybuffer
 // dataview
 // typedarray
