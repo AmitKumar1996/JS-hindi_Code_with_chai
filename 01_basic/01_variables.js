@@ -6,5 +6,8 @@ accountCity = "Jaipur"
 
 accountEmailId ="hello@gamil.com"
 console.log(accountId);
+/*
 
+prefer not use var  because of issue in block scope and functional scope
+*/
 console.table([accountId, accountEmailId, accountPassword])
