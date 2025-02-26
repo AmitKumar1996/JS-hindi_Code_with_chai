@@ -15,6 +15,7 @@ let name = "Amit kumar"
 let age = 25
 let isLogin = true
 
+// data types in JS     
 // number => 2 to power 53
 // bigint
 // string => ""
@@ -61,36 +62,37 @@ console.log(typeof isLogin)
 // 0 => number
 // 1 => number
 
-console.log(typeof null)
-console.log(typeof undefined)
-console.log(typeof NaN)
-console.log(typeof Infinity)
-console.log(typeof -Infinity)
-console.log(typeof 0)
+console.log(typeof null) // object
+console.log(typeof undefined) // undefined
+console.log(typeof NaN) // number
+console.log(typeof Infinity)  // number   
+console.log(typeof -Infinity)   
+console.log(typeof 0)  // number
 console.log(typeof 1)   // number
 
-console.log(typeof {})
-console.log(typeof [])
-console.log(typeof function () { })
-console.log(typeof new Date())
+
+console.log(typeof {})  
+console.log(typeof []) // object
+console.log(typeof function () { })     
+console.log(typeof new Date())  // object
 console.log(typeof new RegExp())    // object
-console.log(typeof new Map())
-console.log(typeof new Set())
-console.log(typeof new WeakMap())
+console.log(typeof new Map())      // object
+console.log(typeof new Set())   // object
+console.log(typeof new WeakMap())  // object
 console.log(typeof new WeakSet())       // object
-console.log(typeof new Promise(() => { }))
-console.log(typeof function* () { })
+console.log(typeof new Promise(() => { })) // object
+console.log(typeof function* () { })     // function
 console.log(typeof class { })       // function
-console.log(typeof new ArrayBuffer())
-console.log(typeof new SharedArrayBuffer())
-console.log(typeof new DataView())
-console.log(typeof new Int8Array())
-console.log(typeof new Uint8Array())
-console.log(typeof new Int16Array())
-console.log(typeof new Uint16Array())
-console.log(typeof new Int32Array())
-console.log(typeof new Uint32Array())
-console.log(typeof new Float32Array())
+console.log(typeof new ArrayBuffer()) // object
+console.log(typeof new SharedArrayBuffer()) // object
+console.log(typeof new DataView()) // object
+console.log(typeof new Int8Array())  // object
+console.log(typeof new Uint8Array()) // object
+console.log(typeof new Int16Array())   // object  
+console.log(typeof new Uint16Array())   // object
+console.log(typeof new Int32Array())   // object
+console.log(typeof new Uint32Array())   // object
+console.log(typeof new Float32Array())  
 console.log(typeof new Float64Array())  // object
 
 
@@ -99,5 +101,6 @@ console.table({ name, age, isLogin })  // object
 console.table([name, age, isLogin])    // array
 console.table({ name: "Amit kumar", age: 25, isLogin: true })  // object
 console.table([name, age, isLogin])    // array
+
 
 
