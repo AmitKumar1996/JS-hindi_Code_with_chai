@@ -38,7 +38,8 @@ let isLogin = true
 // class
 // module
 // buffer
-// arraybuffer  // binary data
+// arraybuffer  
+// binary data
 // sharedarraybuffer
 // dataview
 // typedarray
