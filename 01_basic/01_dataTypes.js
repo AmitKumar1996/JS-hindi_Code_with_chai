@@ -11,4 +11,13 @@ console.log("Amit kumar");
 -->mdn
 */
 
+let name = "Amit kumar"
+let age = 25
+let isLogin = true
+
+// number => 2 to power 53
+// bigint
+// string =>
+// boolean
+
 
