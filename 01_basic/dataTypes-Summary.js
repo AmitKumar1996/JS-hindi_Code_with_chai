@@ -94,7 +94,15 @@ const myFunction =function (){
 console.log(myFunction);  // [Function: myFunction]
 console.log(typeof myFunction);  // function
 
-// *********************************** Memory in JavaScript **********************************************
+
+
+
+
+
+// *********************************** Memory in JavaScript *****************************************************************************
+
+
+
 
 /**
  * Memory in JavaScript
@@ -131,4 +139,53 @@ console.table([
  *
  * Understanding memory management is crucial for optimizing JavaScript applications and preventing memory leaks.
  */
+
+// Example
+
+let MyYoutubeName = 'CodeWithAmitJi';
+
+let anotherName = MyYoutubeName;
+
+console.log(MyYoutubeName);  // CodeWithAmitJi
+console.log(anotherName);  // CodeWithAmitJi
+
+ let userOne = {
+     email : "kumaramit1996.1@gmail.com",
+     upiId: "kumaramit@okicici"
+
+ }
+
+ let userTwo = userOne;
+ console.log(userOne);  // { email: '
+ console.log(userTwo);  // { email: '   // Both are same    // Both are pointing to same memory location in heap memory 
+
+ console.log(userOne.email) 
+console.log(userTwo.email)
+
+userTwo.email = "kamit1996.1@gmail.com";
+console.log(userOne.email)
+console.log(userTwo.email) // Both are same   // Both are pointing to same memory location in heap memory
+
+console.table([ userOne, userTwo ]);
+
+// Method 1:
+/**
+ * Heap & Stack Memory Visualization
+ * Image Reference: Stack-Heap-js.png
+ * File Location: 01_basic/Stack-Heap-js.png
+ */
+
+//Method2:
+const path = require("path");
+console.log("Heap & Stack Memory Visualization: ", path.resolve(__dirname, "Stack-Heap-js.png"));
+
+// Method 3:
+// Open the following URL in your browser to view the image
+//
+// file:///Users/amit/Documents/JavaScript/01_basic/Stack-Heap-js.png  
+
+
+
+
+
 
