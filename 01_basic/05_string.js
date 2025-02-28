@@ -8,7 +8,7 @@ let myName3 = `Dev Amit`;  // Using backticks (Template Literals)
 
 // 2️⃣ String Concatenation (Not Recommended)
 console.log("Dev" + " Amit"); 
-console.log(myName + " is a good person"); 
+console.log(myName + " is a good person"); // Dev Amit is a good person 
 
 // 3️⃣ Template Literals (Recommended) ✅
 const repoCount = 100;
