@@ -94,3 +94,41 @@ const myFunction =function (){
 console.log(myFunction);  // [Function: myFunction]
 console.log(typeof myFunction);  // function
 
+// *********************************** Memory in JavaScript **********************************************
+
+/**
+ * Memory in JavaScript
+ * Memory is a storage area that stores data and instructions for processing. It is a temporary storage area.
+ *
+ * Types of Memory in JavaScript:
+ * 1. Stack Memory(LINEAR, PRIMITIVE)
+ * 2. Heap Memory(NON-LINEAR, REFERENCE, NON-PRIMITIVE)
+ */
+
+// Differences Between Stack and Heap Memory
+
+console.table([
+    { Feature: "Structure", Stack: "Linear (LIFO - Last In First Out)", Heap: "Non-linear (Dynamic)" },
+    { Feature: "Storage Type", Stack: "Stores primitive & reference types", Heap: "Stores reference types" },
+    { Feature: "Size", Stack: "Fixed-size", Heap: "Dynamic-size" },
+    { Feature: "Speed", Stack: "Faster", Heap: "Slower" },
+    { Feature: "Execution", Stack: "Synchronous", Heap: "Asynchronous" },
+    { Feature: "Threading", Stack: "Single-threaded", Heap: "Multi-threaded" },
+    { Feature: "Memory Allocation", Stack: "Contiguous", Heap: "Non-contiguous" },
+    { Feature: "Limitations", Stack: "Limited memory", Heap: "Unlimited memory" },
+    { Feature: "Usage", Stack: "Small memory footprint", Heap: "Large memory footprint" },
+    { Feature: "Complexity", Stack: "Simple", Heap: "Complex" },
+    { Feature: "Memory Management", Stack: "Automatic", Heap: "Manual" },
+    { Feature: "Type", Stack: "Linear memory", Heap: "Non-linear memory" }
+]);
+
+/**
+ * Summary:
+ * - Stack Memory is used for primitive data types and references.
+ * - Heap Memory is used for objects and reference data types.
+ * - Stack is faster due to its contiguous allocation and LIFO mechanism.
+ * - Heap is flexible but slower because of its dynamic allocation.
+ *
+ * Understanding memory management is crucial for optimizing JavaScript applications and preventing memory leaks.
+ */
+
