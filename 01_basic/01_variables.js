@@ -36,13 +36,3 @@ NOTES:
 - Best Practice: Prefer `let` and `const` to avoid scope-related issues.
 */
 
-
-
-/*
-🔹 WHY THIS FORMAT WORKS BEST FOR .JS FILES
-
-✅ No Markdown formatting needed (so it works in GitHub and any editor).
-✅ Uppercase section headers make important terms stand out.
-✅ Table-like structure keeps it readable and well-organized.
-✅ Separators (====, ----) help break sections visually.
-*/
