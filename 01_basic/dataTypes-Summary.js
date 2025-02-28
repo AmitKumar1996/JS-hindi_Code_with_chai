@@ -1,93 +1,96 @@
-/* JavaScript Data Types - Detailed Notes */
+// Primitive 
+// 7 Types : String, Number, Boolean, Null, undefined, Symbol, BigInt
 
-// Primitive Data Types
-// There are 7 primitive data types in JavaScript:
-// 1. String
-// 2. Number
-// 3. Boolean
-// 4. Null
-// 5. Undefined
-// 6. Symbol
-// 7. BigInt
 
-// Non-Primitive (Reference Types)
-// - Objects
-// - Arrays
-// - Functions
+// Non-Primitive(REFRANCE TYPE)
+// Objects, Array, Function  // Object is a collection of key-value pairs
+// Object : {key: value}
+// Array : [value1, value2, value3]
+// Function : function name() {}    // function is a block of code that can be called by name   // function is a sub-routine that contains a sequence of statements to perform a specific task
 
-// Object: A collection of key-value pairs
-const user = { key: 'value' };
 
-// Array: A collection of elements
-const numbers = [1, 2, 3];
+// Why JavaScript is called a dynamicaly typed language or statically typed language?
+// Dynamically Typed Language : The type of variable is determined at runtime.
+// Statically Typed Language : The type of variable is determined at compile time.
+// JavaScript is called a dynamicaly typed language because the type of variable is determined at runtime.  // JavaScript is a loosely typed language   // JavaScript is a weakly typed language
+// Example :
+// var a = 10;  // Number   // Dynamically Typed Language
+// a = "Hello";  // String
+// a = true;  // Boolean
+// a = null;  // Null
+// a = undefined;  // Undefined
+// a = Symbol();  // Symbol  // Symbol is a primitive data type introduced in ES6   // Symbol is a unique and immutable data type
+// a = 10n;  // BigInt  // BigInt is a primitive data type introduced in ES11   // BigInt is used to represent integers that are larger than 2^53 - 1   // BigInt is used to represent integers with arbitrary precision
+// a = {};  // Object       // Dynamically Typed Language
+// a = [];  // Array    // Dynamically Typed Language   // Array is a collection of elements
+// a = function() {};  // Function   // Dynamically Typed 
 
-// Function: A block of code that performs a specific task
-function greet() {
-    console.log('Hello');
-}
+// type of veriable is determined at runtime
 
-// JavaScript as a Dynamically Typed Language
-// JavaScript is dynamically typed, meaning the type of a variable is determined at runtime.
-// It is also a loosely typed and weakly typed language.
-
-// Example:
-let variable = 10;  // Number
-variable = "Hello"; // String
-variable = true; // Boolean
-variable = null; // Null
-variable = undefined; // Undefined
-variable = Symbol(); // Symbol
-variable = 10n; // BigInt
-variable = {}; // Object
-variable = []; // Array
-variable = function() {}; // Function
-
-// Checking Variable Types
 const score = 10;
-console.log(score, typeof score); // 10, number
+console.log(score);  // 10
+console.log(typeof score);  // number
 
 const scoreValue = 100.3;
-console.log(scoreValue, typeof scoreValue); // 100.3, number
+console.log(scoreValue);  // 100.3
+console.log(typeof scoreValue);  // number
 
 const isTrue = true;
-console.log(isTrue, typeof isTrue); // true, boolean
+console.log(isTrue);  // true
+console.log(typeof isTrue);  // boolean
 
 const outsideTemp = null;
-console.log(outsideTemp, typeof outsideTemp); // null, object (this is a known JavaScript quirk)
+console.log(outsideTemp);  // null
+console.log(typeof outsideTemp);  // object
 
 let userEmailAddress;
-console.log(userEmailAddress, typeof userEmailAddress); // undefined, undefined
+console.log(userEmailAddress);  // undefined
+console.log(typeof userEmailAddress);  // undefined
 
 const uniqueId = Symbol('123');
+console.log(uniqueId);  // Symbol(123)
+console.log(typeof uniqueId);  // symbol
+
 const anotherUniqueId = Symbol('123');
-console.log(uniqueId, typeof uniqueId); // Symbol(123), symbol
-console.log(anotherUniqueId, typeof anotherUniqueId); // Symbol(123), symbol
-console.log(uniqueId === anotherUniqueId); // false (Symbols are always unique)
+console.log(anotherUniqueId);  // Symbol(123)
+console.log(typeof anotherUniqueId);  // symbol
+
+console.log(uniqueId === anotherUniqueId);  // false
 
 const bigNumber = 10n;
-console.log(bigNumber, typeof bigNumber); // 10n, bigint
+console.log(bigNumber);  // 10n
+console.log(typeof bigNumber);  // bigint
+
+const user = {};
+console.log(user);  // {}
+console.log(typeof user);  // object
 
 const users = [];
-console.log(users, typeof users); // [], object
+console.log(users);  // []
+console.log(typeof users);  // object
 
-const myFunction = function() {
+const greet = function() {
     console.log('Hello');
-};
-console.log(myFunction, typeof myFunction); // function, function
+}
+console.log(greet);  // [Function: greet]
+console.log(typeof greet);  // function // function is a sub-routine that contains a sequence of statements to perform a specific task
 
-// JavaScript is dynamically typed because the type of a variable is determined at runtime.
-// Dynamically Typed Language: Type is determined at runtime.
-// Statically Typed Language: Type is determined at compile time.
+// JavaScript is a dynamically typed language because the type of variable is determined at runtime.  // JavaScript is a loosely typed language   // JavaScript is a weakly typed language
 
-// Example of Reference Types
-const heroes = ['Shaktiman', 'Superman', 'Batman'];
-let myObject = {
+// Dynamically Typed Language : The type of variable is determined at runtime.
+// Statically Typed Language : The type of variable is determined at compile time.
+
+const herose = ['Shaktiman', 'Superman', 'Batman'];
+let myobject = {
     name: 'John',
     age: 30
-};
 
-// Function Example
-const myFunctionExample = function() {
+}
+
+// function 
+const myFunction =function (){
     console.log('Hello');
-};
+}
+console.log(myFunction);  // [Function: myFunction]
+console.log(typeof myFunction);  // function
 
