@@ -17,3 +17,7 @@ console.log(myCreatedDate1.toDateString());
 
 let myCreatedDate2 = new Date("2025-03-02");
 console.log(myCreatedDate2.toLocaleString());
+
+
+let myCreatedDate3 = new Date("03-02-2025");
+console.log(myCreatedDate3.toLocaleString());
