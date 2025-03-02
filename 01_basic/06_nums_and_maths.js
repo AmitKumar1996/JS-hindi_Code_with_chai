@@ -41,11 +41,11 @@ console.log(hundreds.toLocaleString('en-US')); // '100,000,000' // default
 console.log(hundreds.toLocaleString('es-ES')); // '100.000.000' // Spain
 console.log(hundreds.toLocaleString('de-DE')); // '100.000.000' // Germany
 console.log(hundreds.toLocaleString('fr-FR')); // '100 000 000' // France
-console.log(hundreds.toLocaleString('en-I')); // '100,000,000' // India
+console.log(hundreds.toLocaleString('en-IN')); // '100,000,000' // India
 console.log(hundreds.toLocaleString('en-GB')); // '100,000,000' // UK
 console.log(hundreds.toLocaleString('en-CA')); // '100,000,000' // Canada
 console.log(hundreds.toLocaleString('en-AU')); // '100,000,000' // Australia
-console.log(hundreds.toLocaleString('en-UAE')); // '100,000,000' // UAE
+//console.log(hundreds.toLocaleString('en-UAE')); // '100,000,000' // UAE
 
 
 //Example of Max and Min Numbers
@@ -56,7 +56,7 @@ console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
 console.log(Number.EPSILON); // 2.220446049250313e-16
 console.log(Number.POSITIVE_INFINITY); // Infinity
 console.log(Number.NEGATIVE_INFINITY); // -Infinity
-console.log(Number.NaN); // NaN // Not a Number
+//console.log(Number.NaN); // NaN // Not a Number
 console.log(Number.isFinite(Infinity)); // false
 console.log(Number.isFinite(-Infinity)); // false
 console.log(Number.isFinite(NaN)); // false
@@ -102,6 +102,13 @@ console.log(Math.ceil(4.1)); // 5
 console.log(Math.trunc(4.6)); // 4
 console.log(Math.trunc(4.4)); // 4
 console.log(Math.min(4,3,5,7,1)) // 1
+//console.log(Math.MAX_SAFE_INTEGER); // 
+console.log(Math.random());
+console.log(Math.random()*10);
+console.log(Math.floor(Math.random()*10)+1);
 
 
+const min = 10;
+const max = 21;
 
+console.log(Math.random());
