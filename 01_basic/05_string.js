@@ -127,6 +127,24 @@ console.log(url.toLocaleUpperCase()); // HTTPS://WWW.GOOGLE.COM
 console.log(url.toLocaleLowerCase()); // https://www.google.com 
 
 
+const newString = "Amit-kumar";
+console.log(newString.split("-")); // [ 'Amit', 'kumar' ]
+console.log(newString.slice(0, 4)); // Amit
+console.log(newString.substring(0, 4)); // Amit
+console.log(newString.substr(0, 4)); // Amit
+console.log(newString.padStart(20, "*")); // *************Amit-kumar
+console.log(newString.padEnd(20, "*")); // Amit-kumar*************
+console.log(newString.valueOf()); // Amit-kumar
+console.log(newString.toString()); // Amit-kumar
+console.log(newString.toLocaleUpperCase()); // AMIT-KUMAR
+console.log(newString.toLocaleLowerCase()); // amit-kumar
+console.log(newString.normalize()); // Amit-kumar
+console.log(newString.codePointAt(0)); // 65
+console.log(newString.localeCompare("Amit-kumar")); // 0
+console.log(newString.trim()); // Amit-kumar
+console.log(newString.trimStart()); // Amit-kumar
+
+
 // benifits of using String object
 // ✅ Provides additional properties and methods
 // ✅ Supports string manipulation and formatting
