@@ -69,6 +69,64 @@ console.log(gameName.toString()); // PUBG // toString() is an alias of valueOf()
 console.log(gameName.toLocaleUpperCase()); // PUBG  // toLocaleUpperCase() is an alias of toUpperCase()
 console.log(gameName.toLocaleLowerCase()); // pubg // toLocaleLowerCase() is an alias of toLowerCase()
 
+const newGame = gameName.substring(0,2) // PU 
+console.log(newGame); // PU
+// ✅ String Object Properties
+// 🔹 length: Returns the length of the string.
+// 🔹 prototype: Allows adding properties and methods to an object.
+
+const anotherGame = gameName.slice(0, 2); // PU
+console.log(anotherGame); // PU
+// ✅ String Object Methods
+// 🔹 charAt(): Returns the character at a specified index.
+// 🔹 charCodeAt(): Returns the Unicode value of a character.
+// 🔹 concat(): Combines two or more strings.
+// 🔹 includes(): Checks if a string contains another string.
+// 🔹 indexOf(): Returns the index of the first occurrence of a string.
+// 🔹 lastIndexOf(): Returns the index of the last occurrence of a string.
+// 🔹 match(): Searches a string for a match against a regular expression.
+// 🔹 repeat(): Repeats a string a specified number of times.
+// 🔹 replace(): Replaces a specified value with another value in a string.
+// 🔹 search(): Searches a string for a specified value.
+
+const newStringOne = "    Amit "
+console.log(newStringOne.trim()); // Amit
+console.log(newStringOne.trimStart()); // Amit
+console.log(newStringOne.trimLeft()); // Amit
+console.log(newStringOne.trimEnd()); //     Amit
+console.log(newStringOne.trimRight()); //     Amit
+
+const url = "https://www.google.com";
+console.log(url.startsWith("https")); // true
+console.log(url.endsWith("com")); // true
+console.log(url.includes("google")); // true
+console.log(url.search("google")); // 12
+console.log(url.match("google")); // [ 'google', index: 12, input: 'https://www.google.com', groups: undefined ]    
+console.log(url.replace("google", "facebook")); // https://www.facebook.com
+console.log(url.split(".")); // [ 'https://www', 'google', 'com' ]  
+console.log(url.slice(0, 5)); // https
+console.log(url.substring(0, 5)); // https
+console.log(url.substr(0, 5)); // https
+console.log(url.padStart(30, "*")); // *********https://www.google.com
+console.log(url.padEnd(30, "*")); // https://www.google.com*********
+console.log(url.valueOf()); // https://www.google.com
+console.log(url.toString()); // https://www.google.com
+console.log(url.toLocaleUpperCase()); // HTTPS://WWW.GOOGLE.COM
+console.log(url.toLocaleLowerCase()); // https://www.google.com
+console.log(url.normalize()); // https://www.google.com
+console.log(url.codePointAt(0)); // 104
+console.log(url.localeCompare("https://www.google.com")); // 0
+console.log(url.trim()); // https://www.google.com
+console.log(url.trimStart()); // https://www.google.com
+console.log(url.trimLeft()); // https://www.google.com
+console.log(url.trimEnd()); // https://www.google.com
+console.log(url.trimRight()); // https://www.google.com
+console.log(url.valueOf()); // https://www.google.com
+console.log(url.toString()); // https://www.google.com
+console.log(url.toLocaleUpperCase()); // HTTPS://WWW.GOOGLE.COM
+console.log(url.toLocaleLowerCase()); // https://www.google.com 
+
+
 // benifits of using String object
 // ✅ Provides additional properties and methods
 // ✅ Supports string manipulation and formatting
