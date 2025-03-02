@@ -51,6 +51,23 @@ console.log(gameName.endsWith("G")); // true
 console.log(gameName.repeat(2)); // PUBGPUBG
 console.log(gameName.search("U")); // 1
 console.log(gameName.match("U")); // [ 'U', index: 1, input: 'PUBG', groups: undefined ]
+console.log(gameName.padStart(10, "0")); // 000000PUBG
+console.log(gameName.padEnd(10, "0")); // PUBG000000
+console.log(gameName.valueOf()); // PUBG
+console.log(gameName.toString()); // PUBG
+console.log(gameName.toLocaleUpperCase()); // PUBG
+console.log(gameName.toLocaleLowerCase()); // pubg
+console.log(gameName.normalize()); // PUBG
+console.log(gameName.codePointAt(0)); // 80
+console.log(gameName.localeCompare("PUBG")); // 0
+console.log(gameName.trimStart()); // PUBG
+console.log(gameName.trimEnd()); // PUBG
+console.log(gameName.trimLeft()); // PUBG       // trimLeft() is an alias of trimStart()
+console.log(gameName.trimRight()); // PUBG      // trimRight() is an alias of trimEnd()
+console.log(gameName.valueOf()); // PUBG
+console.log(gameName.toString()); // PUBG // toString() is an alias of valueOf()
+console.log(gameName.toLocaleUpperCase()); // PUBG  // toLocaleUpperCase() is an alias of toUpperCase()
+console.log(gameName.toLocaleLowerCase()); // pubg // toLocaleLowerCase() is an alias of toLowerCase()
 
 // benifits of using String object
 // ✅ Provides additional properties and methods
