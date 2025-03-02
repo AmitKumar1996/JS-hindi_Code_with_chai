@@ -69,6 +69,7 @@ console.log(Number.isFinite(1.1e+308)); // true
 
 
 
+
 // ======================== Maths Library ========================
 
 console.log(Math); // Math object 
@@ -100,5 +101,7 @@ console.log(Math.ceil(4.5)); // 5
 console.log(Math.ceil(4.1)); // 5
 console.log(Math.trunc(4.6)); // 4
 console.log(Math.trunc(4.4)); // 4
+console.log(Math.min(4,3,5,7,1)) // 1
+
 
 
