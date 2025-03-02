@@ -29,6 +29,29 @@ let myName3 = `Dev Amit`;  // Using backticks (Template Literals) ✅ why we use
 
 const gameName = new String(`PUBG`); // Using String object
 console.log(gameName); // String { 'PUBG' } (Object)
+console.log(typeof gameName); // object
+console.log(gameName[0]); // P
+console.log(gameName._proto_); // 4
+console.log(gameName.length); // 4
+console.log(gameName.toUpperCase()); // PUBG
+console.log(gameName.toLowerCase()); // pubg
+console.log(gameName.includes("P")); // true
+console.log(gameName.indexOf("U")); // 2
+console.log(gameName.replace("PUBG", "COD")); // COD
+console.log(gameName.split("")); // [ 'P', 'U', 'B', 'G' ]
+console.log(gameName.slice(0, 2)); // PU
+console.log(gameName.substring(0, 2)); // PU
+console.log(gameName.substr(0, 2)); // PU
+console.log(gameName.trim()); // PUBG
+console.log(gameName.concat(" Mobile")); // PUBG Mobile
+console.log(gameName.charAt(0)); // P
+console.log(gameName.charCodeAt(0)); // 80 (ASCII value) 
+console.log(gameName.startsWith("P")); // true
+console.log(gameName.endsWith("G")); // true
+console.log(gameName.repeat(2)); // PUBGPUBG
+console.log(gameName.search("U")); // 1
+console.log(gameName.match("U")); // [ 'U', index: 1, input: 'PUBG', groups: undefined ]
+
 // benifits of using String object
 // ✅ Provides additional properties and methods
 // ✅ Supports string manipulation and formatting
