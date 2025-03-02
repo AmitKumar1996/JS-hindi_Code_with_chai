@@ -27,6 +27,19 @@ let myName3 = `Dev Amit`;  // Using backticks (Template Literals) ✅ why we use
 // ✅ Improves code performance and optimization
 // ✅ Enhances code portability and compatibility
 
+const gameName = new String(`PUBG`); // Using String object
+console.log(gameName); // String { 'PUBG' } (Object)
+// benifits of using String object
+// ✅ Provides additional properties and methods
+// ✅ Supports string manipulation and formatting
+// ✅ Enables string comparison and conversion
+// ✅ Facilitates string validation and verification
+// ✅ Enhances string processing and analysis
+// ✅ Improves string handling and management
+
+
+
+
 
 // 2️⃣ String Concatenation (Not Recommended)
 console.log("Dev" + " Amit"); 
