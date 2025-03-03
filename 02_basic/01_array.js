@@ -356,3 +356,174 @@ console.log(flatArr); // Output: [1, 2, 3, 4, 5, 6]
 // Q5: How do you remove duplicates from an array?
 const uniqueArr = [...new Set(myArr)]; // Using Set to remove duplicates
 console.log(uniqueArr); // Prints unique elements
+
+
+/****************************************************************************/
+
+/*
+JavaScript Prototypes and Prototype Chaining
+*/
+
+/*
+1. Understanding `prototype` in JavaScript
+- In JavaScript, every function (except arrow functions) has a special property called `prototype`.
+- The `prototype` property is an object that contains properties and methods shared by all instances created by that function (when used as a constructor).
+- Objects created via a constructor function or class inherit properties and methods from the constructor’s prototype.
+*/
+
+// Example of `prototype` Property
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log("Hello, my name is " + this.name);
+};
+
+const person1 = new Person("Amit");
+const person2 = new Person("Kumar");
+
+person1.greet(); // Hello, my name is Amit
+person2.greet(); // Hello, my name is Kumar
+
+console.log(person1.__proto__ === Person.prototype); // true
+console.log(person2.__proto__ === Person.prototype); // true
+
+/*
+2. Prototype Chaining
+- JavaScript uses prototype chaining to look up properties and methods.
+- If a property/method is not found on an object, JavaScript looks for it in the object's prototype, then in its prototype’s prototype, and so on, until reaching null.
+*/
+
+// Example of Prototype Chain
+console.log(person1.toString()); // [object Object]
+
+/*
+- `person1` does not have a `toString()` method.
+- JavaScript looks in `Person.prototype` → Not found.
+- Then it looks in `Object.prototype` (which `Person.prototype` inherits from) → Found!
+*/
+
+/*
+3. Changing the `prototype` of an Object
+- You can manually change an object’s prototype using `Object.setPrototypeOf()`.
+*/
+
+// Example: Changing Prototype
+const animal = {
+    makeSound: function() {
+        console.log("Animal sound");
+    }
+};
+
+const dog = {
+    bark: function() {
+        console.log("Woof!");
+    }
+};
+
+// Change the prototype of dog to animal
+Object.setPrototypeOf(dog, animal);
+
+dog.bark();      // Woof!
+dog.makeSound(); // Animal sound (inherited from animal)
+
+/*
+Alternative Way: `__proto__`
+*/
+const cat = {
+    meow: function() {
+        console.log("Meow!");
+    }
+};
+
+cat.__proto__ = animal;  // Changing prototype
+
+cat.makeSound(); // Animal sound
+
+/*
+Note: `__proto__` is deprecated and not recommended. Use `Object.setPrototypeOf()` instead.
+*/
+
+/*
+4. Overriding Prototype Methods
+- Child objects can override inherited methods.
+*/
+
+// Example: Overriding a Method
+Person.prototype.greet = function() {
+    console.log("Hello from prototype!");
+};
+
+const person3 = new Person("John");
+
+// Override greet for person3
+person3.greet = function() {
+    console.log("Hi, I'm John!");
+};
+
+person3.greet(); // Hi, I'm John! (own method)
+delete person3.greet; // Remove override
+person3.greet(); // Hello from prototype! (fallback to prototype)
+
+/*
+5. `Array(0)` and Prototypes
+Understanding `Array(0)`
+*/
+
+let arr = new Array(0);
+console.log(arr); // []
+console.log(arr.length); // 0
+
+/*
+- `Array(0)` creates an empty array.
+- Since arrays are objects, they inherit methods from `Array.prototype`.
+*/
+
+// Example: Checking Prototype of an Array
+console.log(arr.__proto__ === Array.prototype); // true
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+console.log(Object.prototype.__proto__); // null
+
+/*
+- Arrays inherit from `Array.prototype`.
+- `Array.prototype` inherits from `Object.prototype`.
+- `Object.prototype` is the top of the chain.
+*/
+
+/*
+6. Prototypal Inheritance with `Object.create()`
+You can create objects with a specified prototype using `Object.create()`.
+*/
+
+// Example: Inheriting from a Prototype
+const car = {
+    drive: function() {
+        console.log("Driving...");
+    }
+};
+
+const tesla = Object.create(car);
+tesla.autoPilot = function() {
+    console.log("Self-driving mode activated!");
+};
+
+tesla.drive();     // Driving... (inherited from car)
+tesla.autoPilot(); // Self-driving mode activated!
+
+/*
+- `tesla` inherits from `car`, gaining access to `drive()`.
+- It also defines `autoPilot()`, which `car` does not have.
+*/
+
+/*
+Summary
+1. `prototype` is an object that stores shared properties and methods.
+2. Objects inherit from their prototype via prototype chaining.
+3. Prototypes can be changed using `Object.setPrototypeOf()` or `Object.create()`.
+4. Inherited methods can be overridden in child objects.
+5. Arrays inherit from `Array.prototype`, which inherits from `Object.prototype`.
+6. Use `Object.create()` to create objects with a custom prototype.
+*/
+
+
