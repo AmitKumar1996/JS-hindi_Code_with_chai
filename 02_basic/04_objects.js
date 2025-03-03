@@ -10,4 +10,9 @@ tinderUser.id = "123abc"
 tinderUser.name="Sammy"
 tinderUser.isLoggedIn = false
 
+<<<<<<< HEAD
 console.log(tinderUser)
+=======
+console.log(tinderUser);
+console.log(tinderUser1);
+>>>>>>> 51cbae6 (check)
