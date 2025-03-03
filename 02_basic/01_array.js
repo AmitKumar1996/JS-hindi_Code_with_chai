@@ -21,16 +21,146 @@
 // JavaScript Arrays  
 // Arrays in JavaScript are dynamic, can hold mixed data types, and have built-in methods.
 
+const myArr0 = [0, 1, 2, 3, 4, 5];
+console.log(myArr0); // Output: [0, 1, 2, 3, 4, 5]
+
+// Important Array Methods:
+myArr0.push(6);      // Adds element at the end
+myArr0.pop();        // Removes last element
+myArr0.shift();      // Removes first element
+myArr0.unshift(0);   // Adds element at the beginning
+myArr0.splice(2, 1); // Removes element at index 2
+console.log(myArr0); // Modified array
+//=======================================================================
+
+// JavaScript Array Methods  
+// Arrays in JavaScript are dynamic and have built-in methods for manipulation.  
+
 const myArr = [0, 1, 2, 3, 4, 5];
 console.log(myArr); // Output: [0, 1, 2, 3, 4, 5]
 
-// Important Array Methods:
-myArr.push(6);      // Adds element at the end
-myArr.pop();        // Removes last element
-myArr.shift();      // Removes first element
-myArr.unshift(0);   // Adds element at the beginning
-myArr.splice(2, 1); // Removes element at index 2
-console.log(myArr); // Modified array
+// 1. push() - Adds an element at the end  
+myArr.push(6);  
+console.log(myArr); // Output: [0, 1, 2, 3, 4, 5, 6]
+
+// 2. pop() - Removes the last element  
+myArr.pop();  
+console.log(myArr); // Output: [0, 1, 2, 3, 4, 5]
+
+// 3. shift() - Removes the first element  
+myArr.shift();  
+console.log(myArr); // Output: [1, 2, 3, 4, 5]
+
+// 4. unshift() - Adds an element at the beginning  
+myArr.unshift(0);  
+console.log(myArr); // Output: [0, 1, 2, 3, 4, 5]
+
+// 5. splice() - Removes/Replaces/Adds elements  
+// Removes 1 element at index 2  
+myArr.splice(2, 1);  
+console.log(myArr); // Output: [0, 1, 3, 4, 5]
+
+// Adds elements at index 2  
+myArr.splice(2, 0, 2);  
+console.log(myArr); // Output: [0, 1, 2, 3, 4, 5]
+
+// Replaces element at index 2  
+myArr.splice(2, 1, 9);  
+console.log(myArr); // Output: [0, 1, 9, 3, 4, 5]
+
+// 6. slice() - Returns a portion of an array  
+const slicedArr = myArr.slice(1, 4);  
+console.log(slicedArr); // Output: [1, 9, 3] (from index 1 to 3, excluding 4)
+
+// 7. concat() - Merges arrays  
+const newArr = myArr.concat([6, 7, 8]);  
+console.log(newArr); // Output: [0, 1, 9, 3, 4, 5, 6, 7, 8]
+
+// 8. indexOf() - Finds the index of an element  
+console.log(myArr.indexOf(3)); // Output: 3
+
+// 9. includes() - Checks if an element exists  
+console.log(myArr.includes(4)); // Output: true
+console.log(myArr.includes(10)); // Output: false
+
+// 10. forEach() - Iterates over elements  
+myArr.forEach(num => console.log(num * 2)); // Output: 0 2 18 6 8 10 (prints doubled values)
+
+// 11. map() - Creates a new array with transformed elements  
+const doubledArr = myArr.map(num => num * 2);  
+console.log(doubledArr); // Output: [0, 2, 18, 6, 8, 10]
+
+// 12. filter() - Returns a new array with elements that match a condition  
+const evenNumbers = myArr.filter(num => num % 2 === 0);  
+console.log(evenNumbers); // Output: [0, 4]
+
+// 13. reduce() - Reduces array to a single value  
+const sum0 = myArr.reduce((acc, num) => acc + num, 0);  
+console.log(sum0); // Output: 22
+
+// 14. find() - Finds the first element matching a condition  
+const firstEven = myArr.find(num => num % 2 === 0);  
+console.log(firstEven); // Output: 0
+
+// 15. findIndex() - Finds the index of the first element matching a condition  
+const firstEvenIndex = myArr.findIndex(num => num % 2 === 0);  
+console.log(firstEvenIndex); // Output: 0
+
+// 16. every() - Checks if all elements pass a test  
+console.log(myArr.every(num => num >= 0)); // Output: true
+
+// 17. some() - Checks if at least one element passes a test  
+console.log(myArr.some(num => num > 4)); // Output: true
+
+// 18. reverse() - Reverses the array in place  
+myArr.reverse();  
+console.log(myArr); // Output: [5, 4, 3, 9, 1, 0]
+
+// 19. sort() - Sorts elements (default as strings)  
+myArr.sort();  
+console.log(myArr); // Output: [0, 1, 3, 4, 5, 9] (sorted as numbers)
+
+// Sorting numerically  
+myArr.sort((a, b) => a - b);  
+console.log(myArr); // Output: [0, 1, 3, 4, 5, 9]
+
+// 20. join() - Converts an array into a string  
+const joinedStr = myArr.join('-');  
+console.log(joinedStr); // Output: "0-1-3-4-5-9"
+
+// 21. split() (not an array method, but commonly used with join())  
+const splitArr = joinedStr.split('-');  
+console.log(splitArr); // Output: ["0", "1", "3", "4", "5", "9"]
+
+// 22. fill() - Fills elements with a value  
+myArr.fill(7, 2, 4);  
+console.log(myArr); // Output: [0, 1, 7, 7, 5, 9] (fills index 2 to 3 with 7)
+
+// 23. from() - Creates an array from an iterable  
+const str = "Hello";  
+const charArr = Array.from(str);  
+console.log(charArr); // Output: ["H", "e", "l", "l", "o"]
+
+// 24. isArray() - Checks if a value is an array  
+console.log(Array.isArray(myArr)); // Output: true
+console.log(Array.isArray({})); // Output: false
+
+// 25. flat() - Flattens nested arrays  
+const nestedArr2 = [1, [2, [3, 4]], 5];  
+console.log(nestedArr2.flat()); // Output: [1, 2, [3, 4], 5]  
+console.log(nestedArr2.flat(2)); // Output: [1, 2, 3, 4, 5] (fully flattened)
+
+// 26. flatMap() - Maps and flattens an array  
+const flatMappedArr = myArr.flatMap(num => [num, num * 2]);  
+console.log(flatMappedArr); // Output: [0, 0, 1, 2, 7, 14, 7, 14, 5, 10, 9, 18]
+
+
+//=====================================================================
+
+
+
+
+
 
 // Shallow Copy vs Deep Copy  
 
