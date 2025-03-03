@@ -79,6 +79,71 @@ const numbers = [1, 2, 3, 4];
 const doubled = numbers.map(num => num * 2); // [2, 4, 6, 8]
 numbers.forEach(num => console.log(num)); // Prints 1, 2, 3, 4
 const sum = numbers.reduce((acc, num) => acc + num, 0); // 10
+// JavaScript Array reduce() Method  
+
+// The reduce() method executes a reducer function on each element of the array,  
+// returning a single accumulated result.  
+
+// Basic Syntax:
+const result = array.reduce((accumulator, currentValue) => {
+    // Logic to combine elements
+    return updatedAccumulator;
+}, initialValue);
+
+// Example 1: Sum of all elements in an array
+const numbers1 = [1, 2, 3, 4];
+const sum1 = numbers1.reduce((acc, num) => acc + num, 0);
+console.log(sum1); // Output: 10
+
+// Explanation:
+// - `acc` (accumulator) starts with the initial value `0`.
+// - Iterates through `[1, 2, 3, 4]` and adds each number to `acc`.
+// - Final result: 10.
+
+// Example 2: Find the maximum value in an array
+const maxVal = numbers.reduce((max, num) => (num > max ? num : max), numbers[0]);
+console.log(maxVal); // Output: 4
+
+// Example 3: Counting occurrences of elements in an array
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const fruitCount = fruits.reduce((count, fruit) => {
+    count[fruit] = (count[fruit] || 0) + 1;
+    return count;
+}, {});
+console.log(fruitCount); // Output: { apple: 3, banana: 2, orange: 1 }
+
+// Example 4: Flattening an array of arrays
+const nestedArr = [[1, 2], [3, 4], [5, 6]];
+const flatArr = nestedArr.reduce((acc, arr) => acc.concat(arr), []);
+console.log(flatArr); // Output: [1, 2, 3, 4, 5, 6]
+
+// Important Concepts:
+// 1. `reduce()` works by iterating over the array and accumulating a result.
+// 2. The first argument (`acc`) stores the accumulated value.
+// 3. The second argument (`currentValue`) is the current element being processed.
+// 4. The second parameter to `reduce()` is the initial value of `acc`.
+// 5. It is commonly used for operations like summing, filtering, mapping, and aggregating data.
+
+// Interview Questions:
+// Q1: What is the purpose of the reduce() method?
+// A1: It reduces an array to a single value by applying a function to each element.
+
+// Q2: How is reduce() different from map() and forEach()?
+// A2: 
+// - `map()` returns a new array with transformed elements.
+// - `forEach()` iterates over elements but does not return anything.
+// - `reduce()` returns a single value (sum, max, object, array, etc.).
+
+// Q3: How can you use reduce() to count occurrences of elements?
+// A3: See Example 3, where `reduce()` creates an object with element counts.
+
+// Q4: Can reduce() return an object or an array instead of a number?
+// A4: Yes! `reduce()` can be used to create objects, arrays, strings, etc. (Example 3 and 4).
+
+// Q5: How can you flatten a nested array using reduce()?
+// A5: See Example 4, where `reduce()` merges inner arrays into a single array.
+
+
 
 // Q4: What are the different ways to clone an array in JavaScript?
 // Answer:
