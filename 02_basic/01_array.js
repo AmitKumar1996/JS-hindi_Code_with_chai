@@ -159,6 +159,77 @@ console.log(flatMappedArr); // Output: [0, 0, 1, 2, 7, 14, 7, 14, 5, 10, 9, 18]
 
 
 
+// JavaScript Array join() Method  
+// The join() method creates and returns a new string by concatenating all elements  
+// in an array, separated by a specified separator (default is a comma `,`).
+
+const myArray = ["Hello", "World", "JavaScript"];
+console.log(myArray.join());  
+// Output: "Hello,World,JavaScript" (default separator is `,`)
+
+// 1. Using a space separator  
+console.log(myArray.join(" "));  
+// Output: "Hello World JavaScript"
+
+// 2. Using a hyphen separator  
+console.log(myArray.join("-"));  
+// Output: "Hello-World-JavaScript"
+
+// 3. Using an empty string (concatenates without any separator)  
+console.log(myArray.join(""));  
+// Output: "HelloWorldJavaScript"
+
+// 4. Using a custom separator like `|`  
+console.log(myArray.join("|"));  
+// Output: "Hello|World|JavaScript"
+
+// 5. Using emojis or special characters as a separator  
+console.log(myArray.join("🔥"));  
+// Output: "Hello🔥World🔥JavaScript"
+
+// 6. Joining an array of numbers  
+const numArray = [1, 2, 3, 4, 5];  
+console.log(numArray.join("-"));  
+// Output: "1-2-3-4-5"
+
+// 7. Joining an array with `null` and `undefined` values  
+const mixedArray = [1, null, 2, undefined, 3];  
+console.log(mixedArray.join("-"));  
+// Output: "1--2--3" (null and undefined are treated as empty strings)
+
+// 8. Joining an array with boolean values  
+const boolArray = [true, false, true];  
+console.log(boolArray.join(" & "));  
+// Output: "true & false & true"
+
+// 9. Joining an array with objects (objects convert to `[object Object]`)  
+const objArray = [{ a: 1 }, { b: 2 }, { c: 3 }];  
+console.log(objArray.join(", "));  
+// Output: "[object Object], [object Object], [object Object]"
+
+// 10. Joining a nested array (nested arrays do not get flattened)  
+const nestedArray = [[1, 2], [3, 4], [5, 6]];  
+console.log(nestedArray.join("-"));  
+// Output: "1,2-3,4-5,6"
+
+// 11. Joining an empty array (returns an empty string)  
+const emptyArray = [];  
+console.log(emptyArray.join("-"));  
+// Output: "" (empty string)
+
+// 12. Using join() to convert an array to a CSV (Comma-Separated Values) format  
+const csvArray = ["Name", "Age", "City"];  
+console.log(csvArray.join(","));  
+// Output: "Name,Age,City"
+
+// 13. Creating a readable sentence from an array  
+const sentenceArray = ["JavaScript", "is", "awesome"];  
+console.log(sentenceArray.join(" ") + "!");  
+// Output: "JavaScript is awesome!"
+
+//======================================================================
+
+
 
 
 
