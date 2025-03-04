@@ -116,3 +116,106 @@ if (true) {
 console.log(ab); // Output: 800 (global variable)
 console.log(b); // Error: b is not defined (block-scoped)
 console.log(c); // Output: 30 (var is not block-scoped)
+
+
+
+/*
+Where Errors Will Happen and Why?
+*/
+
+/*
+Example 1: Nested Functions and Scope
+*/
+function one() {
+    const username = "Amit kumar"; // Outer function variable
+
+    function two() {
+        const website = "youtub"; // Inner function variable
+        console.log(username); // Accessing outer function variable (works)
+    }
+
+    console.log(website); // Error: website is not defined
+    two(); // Calling the inner function
+}
+
+one(); // Calling the outer function
+
+/*
+Key Points:
+- `username` is accessible inside `two()` because of lexical scoping.
+- `website` is not accessible outside `two()` because it is block-scoped to `two()`.
+- Error: `website` is not defined in the scope of `one()`.
+*/
+
+/*
+Example 2: Nested if Blocks and Scope
+*/
+if (true) {
+    const username = "Amit"; // Outer block variable
+
+    if (username === "Amit") {
+        const website = "youtub"; // Inner block variable
+        console.log(username + website); // Output: Amityoutub
+    }
+
+    console.log(website); // Error: website is not defined
+}
+
+console.log(username); // Error: username is not defined
+
+/*
+Key Points:
+- `username` is accessible inside the inner `if` block because of block scoping.
+- `website` is not accessible outside the inner `if` block because it is block-scoped.
+- Error: `website` is not defined in the outer `if` block.
+- Error: `username` is not defined outside the outer `if` block.
+*/
+
+/*
+Example 3: Function Declarations vs Function Expressions
+*/
+function addone(value) {
+    return value + 1; // Corrected variable name from `num` to `value`
+}
+
+addone(5); // Works fine
+
+console.log(addTwo(5)); // Error: addTwo is not defined (hoisting issue)
+
+const addTwo = function (num) {
+    return num + 2; // Corrected variable name from `nium` to `num`
+};
+
+console.log(addTwo(5)); // Output: 7 (works after declaration)
+
+/*
+Key Points:
+- `addone` is a function declaration and is hoisted, so it can be called before its definition.
+- `addTwo` is a function expression and is not hoisted, so it cannot be called before its definition.
+- Error: `addTwo` is not defined when called before its declaration.
+- Typo: `nium` should be `num` in the `addTwo` function.
+*/
+
+/*
+Summary of Key Concepts
+*/
+// 1. Scope:
+//    - Variables declared with `const` and `let` are block-scoped.
+//    - Inner blocks can access variables from outer blocks, but not vice versa.
+
+// 2. Function Declarations vs Function Expressions:
+//    - Function declarations are hoisted and can be called before their definition.
+//    - Function expressions are not hoisted and cannot be called before their definition.
+
+// 3. Common Errors:
+//    - Accessing block-scoped variables outside their scope.
+//    - Calling function expressions before their declaration.
+//    - Typos in variable names.
+
+/*
+Best Practices
+*/
+// 1. Use `const` and `let` for block-scoped variables.
+// 2. Avoid accessing variables outside their scope.
+// 3. Declare function expressions before calling them.
+// 4. Double-check variable names for typos.
