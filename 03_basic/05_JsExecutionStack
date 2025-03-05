@@ -1,0 +1,201 @@
+/*
+JavaScript Execution Context
+*/
+
+/*
+1. What is Execution Context?
+*/
+// Execution Context is the environment where JavaScript code is executed.
+// It consists of:
+// - Variable Environment: Stores variables, functions, and arguments.
+// - Lexical Environment: Keeps track of the scope chain.
+// - `this` Binding: Refers to the context object.
+
+/*
+2. Types of Execution Context
+*/
+// 1. Global Execution Context (GEC):
+//    - Created when the script first runs.
+//    - Represents the global scope.
+//    - `this` refers to the global object (`window` in browsers, `global` in Node.js).
+
+// 2. Function Execution Context (FEC):
+//    - Created when a function is invoked.
+//    - Represents the local scope of the function.
+//    - `this` depends on how the function is called.
+
+// 3. Eval Execution Context:
+//    - Created when `eval()` is used (rarely used and not recommended).
+
+/*
+3. Execution Context Lifecycle
+*/
+// 1. Creation Phase:
+//    - Step 1: Create the Variable Object (VO):
+//      - Store function arguments, variables, and function declarations.
+//      - Variables are initialized to `undefined` (hoisting).
+//    - Step 2: Create the Scope Chain:
+//      - Links the current scope to its outer (parent) scope.
+//    - Step 3: Determine the `this` Binding:
+//      - Set the value of `this`.
+
+// 2. Execution Phase:
+//    - Execute the code line by line.
+//    - Assign values to variables.
+//    - Execute function calls.
+
+/*
+4. Diagram: Execution Context Stack
+*/
+/*
++---------------------+
+|   Execution Stack   |
++---------------------+
+|                     |
+|  Function EC (F2)   |  <--- Top of the stack (currently executing)
+|                     |
++---------------------+
+|  Function EC (F1)   |
+|                     |
++---------------------+
+| Global EC (GEC)     |  <--- Bottom of the stack
+|                     |
++---------------------+
+*/
+
+/*
+Key Points:
+- Execution Stack is a LIFO (Last In, First Out) structure.
+- Tracks the order of execution contexts.
+- Global Execution Context (GEC) is always at the bottom.
+- Each function call creates a new Function Execution Context (FEC) and pushes it onto the stack.
+*/
+
+/*
+5. Diagram: Execution Context Components
+*/
+/*
++---------------------+
+| Execution Context   |
++---------------------+
+| Variable Environment|  <--- Stores variables, functions, and arguments.
+| Lexical Environment |  <--- Tracks the scope chain.
+| this Binding        |  <--- Refers to the context object.
++---------------------+
+*/
+
+/*
+6. Example: Execution Context in Action
+*/
+let globalVar = "I am global";
+
+function outer() {
+    let outerVar = "I am outer";
+
+    function inner() {
+        let innerVar = "I am inner";
+        console.log(globalVar); // Access global variable
+        console.log(outerVar);  // Access outer variable
+        console.log(innerVar);  // Access inner variable
+    }
+
+    inner();
+}
+
+outer();
+
+/*
+7. Diagram: Scope Chain
+*/
+/*
++---------------------+
+| Global Scope        |
+| globalVar           |
++---------------------+
+        ^
+        |
++---------------------+
+| Outer Function Scope|
+| outerVar            |
++---------------------+
+        ^
+        |
++---------------------+
+| Inner Function Scope|
+| innerVar            |
++---------------------+
+*/
+
+/*
+Key Points:
+- Scope Chain links the current scope to its outer (parent) scope.
+- The `inner` function can access `globalVar` and `outerVar` through the scope chain.
+*/
+
+/*
+8. Diagram: `this` Binding
+*/
+/*
++---------------------+
+| Global Context      |
+| this = window       |
++---------------------+
+        ^
+        |
++---------------------+
+| Function Context    |
+| this = ?            |  <--- Depends on how the function is called.
++---------------------+
+*/
+
+/*
+Key Points:
+- In the global context, `this` refers to the global object (`window` in browsers).
+- In function context, `this` depends on how the function is called:
+  - Regular function: `this` refers to the global object (or `undefined` in strict mode).
+  - Method: `this` refers to the object calling the method.
+  - Arrow function: `this` is inherited from the surrounding scope.
+*/
+
+/*
+9. Example: `this` Binding
+*/
+const obj = {
+    name: "Amit",
+    greet: function () {
+        console.log(`Hello, ${this.name}`);
+    }
+};
+
+obj.greet(); // Output: Hello, Amit (this refers to `obj`)
+
+/*
+10. Summary of Key Concepts
+*/
+// 1. Execution Context:
+//    - Environment where JavaScript code is executed.
+//    - Consists of Variable Environment, Lexical Environment, and `this` Binding.
+
+// 2. Types of Execution Context:
+//    - Global Execution Context (GEC).
+//    - Function Execution Context (FEC).
+//    - Eval Execution Context (rarely used).
+
+// 3. Execution Context Lifecycle:
+//    - Creation Phase: Initialize variables, create scope chain, and set `this`.
+//    - Execution Phase: Execute code line by line.
+
+// 4. Scope Chain:
+//    - Links the current scope to its outer (parent) scope.
+//    - Allows access to variables in outer scopes.
+
+// 5. `this` Binding:
+//    - Refers to the context object.
+//    - Depends on how the function is called.
+
+/*
+11. Best Practices
+*/
+// 1. Avoid polluting the global scope by using local variables and functions.
+// 2. Use arrow functions if you want to inherit `this` from the surrounding scope.
+// 3. Understand the scope chain to avoid variable conflicts.
