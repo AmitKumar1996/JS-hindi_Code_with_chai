@@ -219,3 +219,302 @@ Best Practices
 // 2. Avoid accessing variables outside their scope.
 // 3. Declare function expressions before calling them.
 // 4. Double-check variable names for typos.
+
+
+/*
+Closures in JavaScript
+*/
+
+/*
+What is a Closure?
+*/
+// A closure is a function that remembers the variables from its outer (enclosing) scope
+// even after the outer function has finished executing.
+
+/*
+Key Points:
+- Closures allow functions to "remember" their lexical scope.
+- They are created when a function is defined inside another function and returned.
+- The inner function retains access to the outer function's variables.
+*/
+
+/*
+Example of a Closure
+*/
+function outerFunction(outerVariable) {
+    return function innerFunction(innerVariable) {
+        console.log(`Outer: ${outerVariable}, Inner: ${innerVariable}`);
+    };
+}
+
+const closureExample = outerFunction("Hello");
+closureExample("World"); // Output: Outer: Hello, Inner: World
+
+/*
+Explanation:
+1. `outerFunction` takes `outerVariable` as an argument.
+2. It returns `innerFunction`, which remembers `outerVariable`.
+3. When `closureExample` is called with "World", it still has access to "Hello" from `outerFunction`.
+*/
+
+/*
+Key Points:
+- The inner function (`innerFunction`) forms a closure.
+- It retains access to `outerVariable` even after `outerFunction` has finished executing.
+*/
+
+/*
+Practical Use Cases of Closures
+*/
+
+/*
+1. Data Encapsulation
+*/
+// Closures can be used to create private variables.
+
+/*
+Example: Data Encapsulation
+*/
+function createCounter() {
+    let count = 0; // Private variable
+    return function () {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+console.log(counter()); // Output: 3
+
+/*
+Key Points:
+- `count` is a private variable that cannot be accessed directly.
+- The inner function forms a closure and retains access to `count`.
+*/
+
+/*
+2. Callback Functions
+*/
+// Closures are often used in callback functions to maintain state.
+
+/*
+Example: Callback Function
+*/
+function delayedGreeting(name) {
+    setTimeout(function () {
+        console.log(`Hello, ${name}!`);
+    }, 1000);
+}
+
+delayedGreeting("Amit"); // Output after 1 second: Hello, Amit!
+
+/*
+Key Points:
+- The callback function forms a closure and remembers the `name` variable.
+*/
+
+/*
+3. Function Factories
+*/
+// Closures can be used to create functions with specific behavior.
+
+/*
+Example: Function Factory
+*/
+function createMultiplier(multiplier) {
+    return function (number) {
+        return number * multiplier;
+    };
+}
+
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+
+console.log(double(5)); // Output: 10
+console.log(triple(5)); // Output: 15
+
+/*
+Key Points:
+- `createMultiplier` returns a function that remembers the `multiplier` value.
+- The returned function can be reused with different inputs.
+*/
+
+/*
+Common Mistakes with Closures
+*/
+
+/*
+1. Accidental Closures in Loops
+*/
+// Closures in loops can lead to unexpected behavior if not handled properly.
+
+/*
+Example: Accidental Closure in Loop
+*/
+for (var i = 1; i <= 3; i++) {
+    setTimeout(function () {
+        console.log(i); // Output: 4, 4, 4
+    }, 1000);
+}
+
+/*
+Explanation:
+- `var` is function-scoped, so all iterations share the same `i`.
+- By the time the timeout executes, `i` has already reached 4.
+
+/*
+Fix: Use `let` (block-scoped) instead of `var`.
+*/
+for (let i = 1; i <= 3; i++) {
+    setTimeout(function () {
+        console.log(i); // Output: 1, 2, 3
+    }, 1000);
+}
+
+/*
+Key Points:
+- Use `let` to create a new block scope for each iteration.
+*/
+
+/*
+2. Memory Leaks
+*/
+// Closures can cause memory leaks if they retain references to large objects unnecessarily.
+
+/*
+Example: Memory Leak
+*/
+function createHeavyClosure() {
+    const largeObject = new Array(1000000).fill("data");
+    return function () {
+        console.log(largeObject[0]);
+    };
+}
+
+const heavyClosure = createHeavyClosure();
+// `largeObject` is retained in memory even if it's no longer needed.
+
+/*
+Key Points:
+- Avoid retaining unnecessary references in closures.
+*/
+
+/*
+Summary of Key Concepts
+*/
+// 1. Closures:
+//    - Functions that remember their lexical scope.
+//    - Created when a function is defined inside another function and returned.
+
+// 2. Use Cases:
+//    - Data encapsulation (private variables).
+//    - Callback functions.
+//    - Function factories.
+
+// 3. Common Mistakes:
+//    - Accidental closures in loops (use `let` instead of `var`).
+//    - Memory leaks (avoid retaining unnecessary references).
+
+/*
+Best Practices
+*/
+// 1. Use closures for encapsulation and maintaining state.
+// 2. Be cautious with closures in loops (use `let`).
+// 3. Avoid memory leaks by not retaining unnecessary references.
+
+
+
+
+
+/*
+Example of a Closure
+*/
+function outerFunction(outerVariable) {
+    return function innerFunction(innerVariable) {
+        console.log(`Outer: ${outerVariable}, Inner: ${innerVariable}`);
+    };
+}
+
+const closureExample1 = outerFunction("Hello");
+closureExample("World"); // Output: Outer: Hello, Inner: World
+
+/*
+Practical Use Cases
+*/
+
+/*
+1. Data Encapsulation
+*/
+function createCounter() {
+    let count = 0; // Private variable
+    return function () {
+        count++;
+        return count;
+    };
+}
+
+const counter1 = createCounter();
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+console.log(counter()); // Output: 3
+
+/*
+2. Callback Functions
+*/
+function delayedGreeting(name) {
+    setTimeout(function () {
+        console.log(`Hello, ${name}!`);
+    }, 1000);
+}
+
+delayedGreeting("Amit"); // Output after 1 second: Hello, Amit!
+
+/*
+3. Function Factories
+*/
+function createMultiplier(multiplier) {
+    return function (number) {
+        return number * multiplier;
+    };
+}
+
+const double1 = createMultiplier(2);
+const triple1 = createMultiplier(3);
+
+console.log(double(5)); // Output: 10
+console.log(triple(5)); // Output: 15
+
+/*
+Common Mistakes
+*/
+
+/*
+1. Accidental Closures in Loops
+*/
+for (var i = 1; i <= 3; i++) {
+    setTimeout(function () {
+        console.log(i); // Output: 4, 4, 4
+    }, 1000);
+}
+
+// Fix: Use `let`
+for (let i = 1; i <= 3; i++) {
+    setTimeout(function () {
+        console.log(i); // Output: 1, 2, 3
+    }, 1000);
+}
+
+/*
+2. Memory Leaks
+*/
+function createHeavyClosure() {
+    const largeObject = new Array(1000000).fill("data");
+    return function () {
+        console.log(largeObject[0]);
+    };
+}
+
+const heavyClosure1 = createHeavyClosure();
+// `largeObject` is retained in memory even if it's no longer needed.
