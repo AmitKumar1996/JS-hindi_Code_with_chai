@@ -211,3 +211,51 @@ Best Practices
 // 1. Use strict equality (`===`) to avoid type coercion issues.
 // 2. Use curly braces `{}` for multi-line `if` statements.
 // 3. Avoid deeply nested `if` statements; use `else if` for clarity.
+
+// D While loop
+ do {
+    
+} while (condition);
+
+// for of
+// ["", "", ""]
+//[{}, {}, {}]
+
+const arr =[1, 2, 3, 4, 5]
+
+for (const i of arr) {
+    console.log(arr[i]);
+    
+    
+}
+
+const s1 = "Amit ji hello"
+
+for(const i of s1 ){
+console.log(i);
+
+}
+
+// maps interview Questions
+
+const maps = new Map();
+maps.set(`IN`, "Indian")
+maps.set(`USA`, "United state")
+maps.set(`Fr`, "France")
+
+console.log(maps);
+
+for(const [key, value] of maps){
+    console.log(key, ':-', value);
+    
+}
+
+const myObject ={
+    'game1': 'NFS',
+    'game2': 'Spiderman'
+}
+
+for(const [key, value] of myObject){    // Not working
+    console.log(key, ':-', value);
+    
+}
