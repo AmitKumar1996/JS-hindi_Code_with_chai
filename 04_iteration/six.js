@@ -158,4 +158,4 @@ Best Practices
 */
 // 1. Use `forEach` for side effects (e.g., logging, updating external variables).
 // 2. Use `filter` to create new arrays based on conditions.
-// 3. Use explicit `return` when using curly braces `{}` in arrow functions.
+// 3. Use explicit `return` when using curly braces `{}` in arrow functions
