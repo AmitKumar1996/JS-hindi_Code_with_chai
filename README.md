@@ -6,10 +6,10 @@
 
 
 ## Memory Execution in JavaScript
-![Memory Execution](memory_execution.jpg)
+![Memory Execution](05_control_flow/memory_execution.jpg)
 
 ## DOM Representation
-![DOM](Dom.jpg)
+![DOM](/06_dom/Dom.jpg)
 
 
 
