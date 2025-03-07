@@ -3,7 +3,13 @@
 ## Heap & Stack Memory Visualization
 ![Memory Diagram](01_basic/Stack-Heap-js.png)
 
-![DOM Structure](assets/DOM.jpg)
-![Memory Execution](images/memory_execution.jpg)
+
+
+## Memory Execution in JavaScript
+![Memory Execution](memory_execution.jpg)
+
+## DOM Representation
+![DOM](DOM.jpg)
+
 
 
