@@ -9,7 +9,7 @@
 ![Memory Execution](memory_execution.jpg)
 
 ## DOM Representation
-![DOM](DOM.jpg)
+![DOM](Dom.jpg)
 
 
 
