@@ -209,3 +209,6 @@ Best Practices
 // 1. Use `querySelector` and `querySelectorAll` for flexible element selection.
 // 2. Minimize direct DOM manipulation for better performance.
 // 3. Use event delegation for handling events on multiple elements.
+
+
+
