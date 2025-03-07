@@ -1,0 +1,337 @@
+/*
+Web Development Concepts and Interview Questions
+*/
+
+/*
+1. Order of File Loading and Purpose of Technologies
+*/
+// Q: Order of files load and why HTML, CSS, JS, React, Java, Spring Boot, DB?
+
+/*
+Answer:
+1.HTML: Loaded first. Defines the structure and content of the webpage.
+2. CSS: Loaded after HTML. Styles the HTML elements (e.g., colors, layouts).
+3. JavaScript: Loaded after CSS. Adds interactivity and dynamic behavior to the webpage.
+4. React: A JavaScript library for building user interfaces. Loaded after the core JavaScript files.
+5. **Java**: A backend programming language. Used for server-side logic and APIs.
+6. Spring Boot: A Java framework for building web applications and microservices.
+7. Database (DB): Stores and retrieves data for the application. Accessed via backend (Java/Spring Boot).
+
+Why We Use These Technologies:
+- HTML: To structure content.
+- CSS: To style and design the webpage.
+- JavaScript: To make the webpage interactive.
+- React: To build reusable UI components.
+- Java: For robust backend development.
+- Spring Boot**: To simplify Java-based backend development.
+- Database: To store and manage application data.
+*/
+
+/*
+2. Difference Between Elements and Tags
+*/
+// Q: Difference between elements and tags?
+
+/*
+Answer:
+- **Tag**: The opening and closing parts of an HTML element (e.g., `<p>`, `</p>`).
+- **Element**: The combination of a start tag, content, and end tag (e.g., `<p>Hello</p>`).
+*/
+
+/*
+3. Semantic Tags in HTML
+*/
+// Q: What are semantic tags in HTML?
+
+/*
+Answer:
+Semantic tags describe the meaning of the content they contain. Examples:
+- `<header>`: Represents the header of a section or page.
+- `<footer>`: Represents the footer of a section or page.
+- `<article>`: Represents independent, self-contained content.
+- `<section>`: Represents a section of a document.
+- `<nav>`: Represents navigation links.
+*/
+
+/*
+4. Self-Closing Tags
+*/
+// Q: What are self-closing tags?
+
+/*
+Answer:
+Self-closing tags do not have a closing tag. Examples:
+- `<img />`: For images.
+- `<br />`: For line breaks.
+- `<input />`: For input fields.
+*/
+
+/*
+5. Document Type in HTML
+*/
+// Q: What is the document type in HTML, and why is it used?
+
+/*
+Answer:
+The `<!DOCTYPE html>` declaration at the top of an HTML file specifies the document type and version (HTML5). It ensures the browser renders the page in standards mode.
+*/
+
+/*
+6. Attributes in HTML
+*/
+// Q: What are attributes in HTML? Give examples.
+
+/*
+Answer:
+Attributes provide additional information about HTML elements. Examples:
+- `<img src="image.jpg" alt="Description">`: `src` and `alt` are attributes.
+- `<a href="https://example.com">Link</a>`: `href` is an attribute.
+*/
+
+/*
+7. Meta and Canvas Tags
+*/
+// Q: What are meta and canvas tags?
+
+/*
+Answer:
+- **Meta Tag**: Provides metadata about the HTML document (e.g., `<meta charset="UTF-8">`).
+- **Canvas Tag**: Used to draw graphics dynamically using JavaScript (e.g., `<canvas id="myCanvas"></canvas>`).
+*/
+
+/*
+8. Div and Span
+*/
+// Q: What are `<div>` and `<span>`?
+
+/*
+Answer:
+- **`<div>`**: A block-level container used for grouping and styling content.
+- **`<span>`**: An inline container used for styling small portions of text.
+*/
+
+/*
+9. Block vs Inline Elements
+*/
+// Q: What is the difference between block and inline elements?
+
+/*
+Answer:
+- **Block Elements**: Take the full width of their container (e.g., `<div>`, `<p>`).
+- **Inline Elements**: Take only as much width as needed (e.g., `<span>`, `<a>`).
+*/
+
+/*
+10. Specificity in CSS
+*/
+// Q: What is specificity in CSS?
+
+/*
+Answer:
+Specificity determines which CSS rule is applied when multiple rules target the same element. It is calculated as a four-part value: `a,b,c,d`.
+- **Inline Styles**: Highest specificity (`a=1`).
+- **IDs**: Higher than classes and elements (`b=1`).
+- **Classes, Attributes, Pseudo-Classes**: Higher than elements (`c=1`).
+- **Elements, Pseudo-Elements**: Lowest specificity (`d=1`).
+
+Example:
+*/
+<style>
+    p { color: blue; } /* Element selector (d=1) */
+    .example { color: green; } /* Class selector (c=1) */
+    #unique { color: yellow; } /* ID selector (b=1) */
+</style>
+
+<div id="unique" class="example" style="color: red;">This text is red.</div>
+/*
+Key Points:
+- Inline styles override all other rules.
+- Specificity helps resolve conflicts between CSS rules.
+*/
+
+/*
+11. Selectors in CSS
+*/
+// Q: What are selectors in CSS?
+
+/*
+Answer:
+Selectors are used to target HTML elements for styling. Examples:
+- **Element Selector**: `p { color: blue; }`
+- **Class Selector**: `.example { color: green; }`
+- **ID Selector**: `#unique { color: yellow; }`
+- **Attribute Selector**: `input[type="text"] { border: 1px solid black; }`
+*/
+
+/*
+12. Use of `!important` in CSS
+*/
+// Q: What is the use of `!important` in CSS?
+
+/*
+Answer:
+The `!important` keyword overrides all other styles for a specific property. Example:
+*/
+p { color: blue !important; } /* This will override other color styles */
+/*
+Key Points:
+- Use `!important` sparingly to avoid conflicts.
+*/
+
+/*
+13. Default Value of Position Property
+*/
+// Q: What is the default value of the `position` property?
+
+/*
+Answer:
+- **Default Value**: `static`.
+- **Absolute**: Positioned relative to the nearest positioned ancestor.
+- **Relative**: Positioned relative to its normal position.
+*/
+
+/*
+14. Flexbox in CSS
+*/
+// Q: What is Flexbox in CSS?
+
+/*
+Answer:
+Flexbox is a layout model for arranging elements in a container. It allows for flexible and responsive layouts. Example:
+*/
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+/*
+Key Points:
+- Use `display: flex` to create a flex container.
+- Use properties like `justify-content`, `align-items`, and `flex-direction` to control layout.
+*/
+
+/*
+15. JavaScript: Single-Threaded or Multi-Threaded?
+*/
+// Q: Is JavaScript single-threaded or multi-threaded?
+
+/*
+Answer:
+JavaScript is **single-threaded**, meaning it executes one task at a time. However, it uses asynchronous programming (e.g., callbacks, promises) to handle multiple tasks.
+*/
+
+/*
+16. Data Types in JavaScript
+*/
+// Q: What are the data types in JavaScript?
+
+/*
+Answer:
+JavaScript has two types of data:
+- **Primitive Types**: `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`.
+- **Non-Primitive Types**: `object`, `array`, `function`.
+*/
+
+/*
+17. Variables in JavaScript
+*/
+// Q: What are variables in JavaScript, and how many ways can we create them?
+
+/*
+Answer:
+Variables are used to store data. They can be created using:
+- **`var`**: Function-scoped.
+- **`let`**: Block-scoped.
+- **`const`**: Block-scoped and immutable.
+*/
+
+/*
+18. Scopes in JavaScript
+*/
+// Q: What are scopes in JavaScript?
+
+/*
+Answer:
+Scope defines the visibility of variables. Types:
+- **Global Scope**: Accessible everywhere.
+- **Function Scope**: Accessible within a function.
+- **Block Scope**: Accessible within a block (e.g., `if`, `for`).
+*/
+
+/*
+19. Functions in JavaScript
+*/
+// Q: What are functions in JavaScript?
+
+/*
+Answer:
+Functions are reusable blocks of code. They can be defined using:
+- **Function Declaration**: `function myFunction() {}`
+- **Function Expression**: `const myFunction = function() {}`
+- **Arrow Function**: `const myFunction = () => {}`
+*/
+
+/*
+20. Objects in JavaScript
+*/
+// Q: What are objects in JavaScript?
+
+/*
+Answer:
+Objects are collections of key-value pairs. Example:
+*/
+const person = {
+    name: "Amit",
+    age: 25,
+    greet: function() {
+        console.log("Hello!");
+    }
+};
+/*
+Key Points:
+- Objects can store properties and methods.
+*/
+
+/*
+21. DOM in JavaScript
+*/
+// Q: What is the DOM, and what is its use?
+
+/*
+Answer:
+The DOM (Document Object Model) is a programming interface for HTML and XML documents. It allows JavaScript to:
+- Access and manipulate HTML elements.
+- Change content, attributes, and styles.
+- Handle events (e.g., clicks, keypresses).
+*/
+
+/*
+22. JavaScript Output-Based Interview Questions
+*/
+// Q: What are some common JavaScript output-based interview questions?
+
+/*
+Answer:
+Examples:
+1. What is the output of `console.log(typeof null)`? // Output: "object"
+2. What is the output of `console.log(1 + "1")`? // Output: "11"
+3. What is the output of `console.log([] == ![])`? // Output: true
+*/
+
+/*
+Summary of Key Concepts
+*/
+// 1. HTML: Structure and content.
+// 2. CSS: Styling and design.
+// 3. JavaScript: Interactivity and dynamic behavior.
+// 4. React: Reusable UI components.
+// 5. Java: Backend development.
+// 6. Spring Boot: Simplifies Java backend development.
+// 7. Database: Stores and manages data.
+// 8. Specificity: Determines which CSS rule is applied.
+// 9. Flexbox: Layout model for responsive designs.
+// 10. JavaScript: Single-threaded, asynchronous.
+// 11. DOM: Interface for interacting with HTML.
+
+
+
+// promises in JS?

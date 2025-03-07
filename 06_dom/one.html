@@ -12,10 +12,101 @@
     
 </body>
 </html>
-
-
-// console.log(Window)
-//console.log(document)
+  
 
 
 
+/*
+/*
+Detailed Notes on DOM (Document Object Model)
+*/
+
+/*
+1. What is the DOM?
+- The Document Object Model (DOM) is a programming interface for web documents.
+- It represents the structure of a webpage as a tree-like structure where each element is a node.
+- The DOM allows JavaScript to dynamically modify the content, structure, and style of a webpage.
+
+2. The `window` Object:
+- `window` is the global object in JavaScript that represents the browser window.
+- It provides methods and properties to interact with the browser (e.g., alert, setTimeout, location, history, etc.).
+- Example:
+  ```js
+  console.log(window); // Prints the window object containing browser-related methods and properties.
+  ```
+
+3. The `document` Object:
+- The `document` object is a part of the `window` object and represents the webpage loaded in the browser.
+- It allows accessing and manipulating HTML elements via JavaScript.
+- Example:
+  ```js
+  console.log(document); // Prints the HTML document structure.
+  console.log(document.title); // Returns the title of the document.
+  ```
+
+4. Accessing Elements in the DOM:
+- `document.getElementById("id")` - Selects an element by ID.
+- `document.getElementsByClassName("class")` - Selects elements by class name.
+- `document.getElementsByTagName("tag")` - Selects elements by tag name.
+- `document.querySelector("selector")` - Selects the first element matching a CSS selector.
+- `document.querySelectorAll("selector")` - Selects all elements matching a CSS selector.
+
+Example:
+```js
+let heading = document.querySelector(".heading");
+console.log(heading.innerText); // Retrieves the text inside the h1 tag.
+```
+
+5. Modifying the DOM:
+- Changing text: `element.innerText = "New Text";`
+- Changing HTML: `element.innerHTML = "<strong>Bold Text</strong>";`
+- Changing attributes: `element.setAttribute("class", "new-class");`
+- Changing styles: `element.style.color = "red";`
+- Adding elements:
+  ```js
+  let newPara = document.createElement("p");
+  newPara.innerText = "This is a new paragraph";
+  document.body.appendChild(newPara);
+  ```
+
+6. Event Handling:
+- Adding event listeners to elements.
+- Example:
+  ```js
+  document.querySelector(".heading").addEventListener("click", function() {
+      alert("Heading Clicked!");
+  });
+  ```
+
+7. Interview Questions and Problems:
+- **Q1:** What is the difference between `innerText` and `innerHTML`?
+  - `innerText` retrieves only the visible text.
+  - `innerHTML` retrieves the text including HTML tags.
+- **Q2:** How do you remove an element from the DOM?
+  ```js
+  let element = document.querySelector(".heading");
+  element.remove();
+  ```
+- **Q3:** How do you clone a node in JavaScript?
+  ```js
+  let clonedNode = document.querySelector(".heading").cloneNode(true);
+  document.body.appendChild(clonedNode);
+  ```
+- **Q4:** Explain `event bubbling` and `event capturing` in JavaScript.
+  - **Event Bubbling:** Events propagate from child to parent (bottom-up).
+  - **Event Capturing:** Events propagate from parent to child (top-down).
+- **Q5:** How do you prevent default behavior in an event?
+  ```js
+  document.querySelector("a").addEventListener("click", function(event) {
+      event.preventDefault(); // Stops the default action of a link.
+  });
+  ```
+
+These are the fundamental concepts and interview problems related to the DOM. Let me know if you need further explanations! 🚀
+
+
+
+
+
+
+*/
