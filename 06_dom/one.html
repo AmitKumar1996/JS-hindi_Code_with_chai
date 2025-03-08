@@ -25,6 +25,159 @@
 
 
 /*
+====================
+Window Object in JavaScript
+====================
+The `window` object represents the browser window.
+It is the global object in client-side JavaScript.
+*/
+
+// ====================
+// Key Properties of Window Object
+// ====================
+// window.innerWidth: Width of the browser's content area.
+// window.innerHeight: Height of the browser's content area.
+// window.location: Manages URL and navigation.
+// window.document: Refers to the loaded web page.
+// window.localStorage / window.sessionStorage: Stores data locally.
+
+/*
+====================
+Key Methods of Window Object
+====================
+window.alert(): Displays an alert box.
+window.open(): Opens a new window/tab.
+window.close(): Closes the current window.
+window.setTimeout(): Executes code after a delay.
+window.setInterval(): Repeatedly executes code.
+*/
+
+// ====================
+// Uses of Window Object
+// ====================
+// Control browser window behavior.
+// Manage timers and delays.
+// Handle navigation and URLs.
+// Store data in the browser.
+
+/*
+====================
+Document Object in JavaScript
+====================
+The `document` object represents the web page (DOM).
+It is used to interact with HTML elements.
+*/
+
+// ====================
+// Key Properties of Document Object
+// ====================
+// document.title: Gets/sets the page title.
+// document.body: Represents the <body> element.
+// document.URL: Returns the current URL.
+// document.forms: Collection of all <form> elements.
+// document.images: Collection of all <img> elements.
+
+/*
+====================
+Key Methods of Document Object
+====================
+document.getElementById(): Selects an element by ID.
+document.querySelector(): Selects the first matching element.
+document.createElement(): Creates a new HTML element.
+document.appendChild(): Adds an element to the DOM.
+document.addEventListener(): Attaches an event listener.
+*/
+
+// ====================
+// Uses of Document Object
+// ====================
+// Manipulate HTML elements.
+// Dynamically add/remove elements.
+// Handle user interactions (e.g., clicks, input).
+// Modify page content and structure.
+
+/*
+====================
+Inside Method in JavaScript
+====================
+An "inside method" is a function defined inside another function or object.
+It encapsulates logic for specific tasks.
+*/
+
+// ====================
+// Examples of Inside Methods
+// ====================
+
+// 1. Object Method
+const person = {
+  name: "John",
+  greet: function() {
+    // Inside method to greet the user
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+person.greet(); // Calls the inside method
+
+// 2. Class Method
+class Calculator {
+  add(a, b) {
+    // Inside method to add two numbers
+    return a + b;
+  }
+}
+const calc = new Calculator();
+console.log(calc.add(2, 3)); // Calls the inside method
+
+// 3. Function-Scoped Method
+function outerFunction() {
+  function innerFunction() {
+    // Inside method to log a message
+    console.log("This is an inside method");
+  }
+  innerFunction(); // Calls the inside method
+}
+outerFunction();
+
+// ====================
+// Uses of Inside Methods
+// ====================
+// Encapsulate functionality.
+// Improve code organization.
+// Reuse code efficiently.
+// Limit function scope to avoid global pollution.
+
+/*
+====================
+Combined Example
+====================
+Using window, document, and inside method together.
+This example adds a button to the page and handles a click event.
+*/
+
+window.onload = function() {
+  // Inside method to handle page load
+  const button = document.createElement("button");
+  button.textContent = "Click Me";
+  button.addEventListener("click", function() {
+    // Inside method to handle button click
+    window.alert("Button clicked!");
+  });
+  document.body.appendChild(button);
+};
+
+/*
+====================
+Summary Table
+====================
+| Component       | Uses                                                                 |
+|------------------|----------------------------------------------------------------------|
+| Window Object    | Interact with the browser window, manage timers, handle navigation. |
+| Document Object  | Manipulate the DOM, handle user interactions, modify page content.  |
+| Inside Method    | Encapsulate logic, organize code, reuse functionality.             |
+*/
+
+
+/*
 /*
 Detailed Notes on DOM (Document Object Model)
 */
