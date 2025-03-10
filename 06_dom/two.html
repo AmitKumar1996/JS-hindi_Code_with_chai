@@ -13,6 +13,17 @@
     <div class="day">Thursday</div>
   </body>
   <script>
-    document.querySelector(".pattern");
+    document.querySelector(".parent");
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
+    for (let index = 0; index < parent.children.length; index++) {
+      console.log(parent.children[i].innerHTML);
+    }
+    parent.children[1].style.color = "orange";
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector(".day");
+    console.log(dayOne);
   </script>
 </html>
