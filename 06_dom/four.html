@@ -1,21 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--
+      ====================
+      Meta Tags
+      ====================
+      - charset="UTF-8": Specifies the character encoding for the document (UTF-8 is the most common).
+      - viewport: Ensures the page is responsive and scales properly on all devices.
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      ====================
+      Title of the Webpage
+      ====================
+      - The title appears in the browser tab and is used for SEO.
+    -->
     <title>Interview</title>
   </head>
+
+  <!--
+    ====================
+    Body of the Webpage
+    ====================
+    - The body contains the visible content of the webpage.
+    - Inline styles are used to set the background color to dark gray (#212121) and text color to white (#fff).
+  -->
   <body style="background-color: #212121; color: #ffff">
+    <!--
+      ====================
+      Unordered List (ul)
+      ====================
+      - A list with the class "language" containing one list item (li) for "JavaScript".
+    -->
     <ul class="language">
       <li>JavaScript</li>
     </ul>
+
+    <script>
+      /*
+        ====================
+        Function to Add a Language
+        ====================
+        - This function dynamically adds a new language to the list.
+        - Steps:
+          1. Create a new <li> element.
+          2. Set its inner HTML to the provided language name.
+          3. Append the new <li> to the <ul> with class "language".
+      */
+      function addLanguage(langName) {
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`;
+        document.querySelector(".language").appendChild(li);
+      }
+
+      // Adding languages using the function
+      addLanguage("python");
+      addLanguage("typeScript");
+
+      /*
+        ====================
+        Optimized Approach to Add a Language
+        ====================
+        - This function is optimized by using `createTextNode` instead of `innerHTML`.
+        - `createTextNode` is safer and faster for adding plain text.
+      */
+      function addOptLanguage(langName) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+      }
+
+      // Adding a language using the optimized function
+      addOptLanguage("golang");
+
+      /*
+        ====================
+        Editing a List Item
+        ====================
+        - Select the second list item using `querySelector`.
+        - Replace it with a new <li> element containing "Mojo".
+      */
+      const secondLang = document.querySelector("li:nth-child(2)");
+      console.log(secondLang); // Logs the second list item
+
+      const newLi = document.createElement("li");
+      newLi.textContent = "Mojo";
+      secondLang.replaceWith(newLi); // Replaces the second list item with "Mojo"
+
+      /*
+        ====================
+        Editing the First List Item
+        ====================
+        - Select the first list item using `querySelector`.
+        - Replace its outer HTML with a new <li> element containing "typeScript".
+      */
+      const firstLang = document.querySelector("li:first-child");
+      firstLang.outerHTML = "<li>typeScript</li>";
+
+      /*
+        ====================
+        Removing the Last List Item
+        ====================
+        - Select the last list item using `querySelector`.
+        - Remove it from the DOM using the `remove()` method.
+      */
+      const lastLang = document.querySelector("li:last-child");
+      lastLang.remove();
+
+      /*
+        ====================
+        Extra Example: Inserting a Language at a Specific Position
+        ====================
+        - Insert a new language at the beginning of the list.
+      */
+      const newLang = document.createElement("li");
+      newLang.textContent = "Ruby";
+      const languageList = document.querySelector(".language");
+      languageList.insertBefore(newLang, languageList.firstChild);
+
+      /*
+        ====================
+        Extra Example: Cloning a List Item
+        ====================
+        - Clone the first list item and append it to the end of the list.
+      */
+      const firstItem = document.querySelector("li:first-child");
+      const clonedItem = firstItem.cloneNode(true); // true for deep cloning
+      languageList.appendChild(clonedItem);
+
+      /*
+        ====================
+        Extra Example: Adding Multiple Languages at Once
+        ====================
+        - Use a loop to add multiple languages to the list.
+      */
+      const languages = ["Java", "C++", "Swift"];
+      languages.forEach((lang) => {
+        const li = document.createElement("li");
+        li.textContent = lang;
+        languageList.appendChild(li);
+      });
+
+      /*
+        ====================
+        Extra Example: Event Delegation
+        ====================
+        - Add a click event listener to the parent <ul> to handle clicks on any <li>.
+      */
+      languageList.addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+          console.log(`You clicked on: ${event.target.textContent}`);
+        }
+      });
+
+      /*
+        ====================
+        Extra Example: Removing All List Items
+        ====================
+        - Remove all <li> elements from the list.
+      */
+      function removeAllLanguages() {
+        while (languageList.firstChild) {
+          languageList.removeChild(languageList.firstChild);
+        }
+      }
+      // Uncomment to test:
+      // removeAllLanguages();
+    </script>
   </body>
-  <script>
-    function addLanguage(langName) {
-      const li = document.createElement("li");
-      li.innerHTML = `${langName}`;
-      document.querySelector(".language").appendChild(li);
-    }
-    addLanguage("python");
-  </script>
 </html>
