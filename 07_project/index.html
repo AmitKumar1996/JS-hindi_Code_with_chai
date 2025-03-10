@@ -1,32 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--
+      ====================
+      Meta Tags
+      ====================
+      - charset="UTF-8": Specifies the character encoding for the document (UTF-8 is the most common).
+      - viewport: Ensures the page is responsive and scales properly on all devices.
+      - http-equiv="X-UA-Compatible": Ensures compatibility with older versions of Internet Explorer.
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!--
+      ====================
+      External Stylesheets
+      ====================
+      - Links to external CSS files for styling the page.
+      - "style.css": Custom styles for this project.
+      - "../styles.css": Global styles (if any).
+    -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../styles.css" />
+
+    <!--
+      ====================
+      Title of the Webpage
+      ====================
+      - The title appears in the browser tab and is used for SEO.
+    -->
     <title>JavaScript Background Color Switcher</title>
   </head>
+
+  <!--
+    ====================
+    Body of the Webpage
+    ====================
+    - The body contains the visible content of the webpage.
+  -->
   <body>
+    <!--
+      ====================
+      Navigation Bar
+      ====================
+      - A simple navigation bar with two links:
+        1. "Home": Links to the root page ("/").
+        2. "Youtube channel": Opens the Chai Aur Code YouTube channel in a new tab.
+    -->
     <nav>
       <a href="/" aria-current="page">Home</a>
       <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
         >Youtube channel</a
       >
     </nav>
+
+    <!--
+      ====================
+      Canvas Section
+      ====================
+      - A container for the color switcher interface.
+    -->
     <div class="canvas">
-     
+      <!--
+        ====================
+        Heading
+        ====================
+        - Displays the title of the project.
+      -->
       <h1>Color Scheme Switcher</h1>
+
+      <!--
+        ====================
+        Color Buttons
+        ====================
+        - Four span elements with class "button" and unique IDs:
+          1. grey: Represents the grey color.
+          2. white: Represents the white color.
+          3. blue: Represents the blue color.
+          4. yellow: Represents the yellow color.
+        - These buttons will be used to change the background color of the page.
+      -->
       <span class="button" id="grey"></span>
       <span class="button" id="white"></span>
       <span class="button" id="blue"></span>
       <span class="button" id="yellow"></span>
+
+      <!--
+        ====================
+        Instructions
+        ====================
+        - Displays instructions for the user to click on the color buttons.
+      -->
       <h2>
         Try clicking on one of the colors above
         <span>to change the background color of this page!</span>
       </h2>
     </div>
+
+    <!--
+      ====================
+      External JavaScript File
+      ====================
+      - Links to an external JavaScript file ("amitJSCode.js") that contains the logic for the color switcher.
+    -->
     <script src="amitJSCode.js"></script>
   </body>
 </html>
