@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      ====================
+      Meta Tags
+      ====================
+      - charset="UTF-8": Specifies the character encoding for the document (UTF-8 is the most common).
+      - viewport: Ensures the page is responsive and scales properly on all devices.
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      ====================
+      Title of the Webpage
+      ====================
+      - The title appears in the browser tab and is used for SEO.
+    -->
+    <title>Amit kumar</title>
+  </head>
+
+  <!--
+    ====================
+    Body of the Webpage
+    ====================
+    - The body contains the visible content of the webpage.
+    - Inline styles are used to set the background color to dark gray (#212121) and text color to white (#fff).
+  -->
+  <body style="background-color: #212121; color: #fff">
+    <script>
+      /*
+        ====================
+        Creating a New Div Element
+        ====================
+        - document.createElement("div"): Creates a new <div> element.
+        - The div is stored in the `div` variable.
+      */
+      const div = document.createElement("div");
+
+      /*
+        ====================
+        Logging the Div to the Console
+        ====================
+        - console.log(div): Outputs the created div to the browser console for debugging.
+      */
+      console.log(div);
+
+      /*
+        ====================
+        Adding a Class to the Div
+        ====================
+        - div.className = "main": Adds the class "main" to the div.
+        - Classes are used for styling and selecting elements in CSS or JavaScript.
+      */
+      div.className = "main";
+
+      /*
+        ====================
+        Adding a Random ID to the Div
+        ====================
+        - div.id = Math.round(Math.random() * 10 + 1): Assigns a random ID between 1 and 11.
+        - Math.random() generates a random number between 0 and 1.
+        - Math.round() rounds the number to the nearest integer.
+      */
+      div.id = Math.round(Math.random() * 10 + 1);
+
+      /*
+        ====================
+        Setting a Title Attribute
+        ====================
+        - div.setAttribute("title", "generated title"): Adds a title attribute to the div.
+        - The title attribute is displayed as a tooltip when the user hovers over the div.
+      */
+      div.setAttribute("title", "generated title");
+
+      /*
+        ====================
+        Styling the Div
+        ====================
+        - div.style.backgroundColor = "green": Sets the background color of the div to green.
+        - div.style.padding = "12px": Adds 12px padding to the div.
+      */
+      div.style.backgroundColor = "green";
+      div.style.padding = "12px";
+
+      /*
+        ====================
+        Adding Inner HTML Content
+        ====================
+        - div.innerHTML = "chai aur code": Adds the text "chai aur code" inside the div.
+        - innerHTML can also be used to add HTML tags (e.g., <strong>chai aur code</strong>).
+      */
+      div.innerHTML = "chai aur code";
+
+      /*
+        ====================
+        Creating a Text Node
+        ====================
+        - document.createTextNode("chai aur code"): Creates a text node with the text "chai aur code".
+        - Text nodes are used to add plain text to an element.
+      */
+      const addText = document.createTextNode("chai aur code");
+
+      /*
+        ====================
+        Appending the Text Node to the Div
+        ====================
+        - div.appendChild(addText): Adds the text node to the div.
+        - This ensures the text is added as a child of the div.
+      */
+      div.appendChild(addText);
+
+      /*
+        ====================
+        Appending the Div to the Body
+        ====================
+        - document.body.appendChild(div): Adds the div to the body of the document.
+        - This makes the div visible on the webpage.
+      */
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>
