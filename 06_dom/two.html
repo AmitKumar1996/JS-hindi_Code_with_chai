@@ -1,34 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--
+      ====================
+      Meta Tags
+      ====================
+      - charset="UTF-8": Specifies the character encoding for the document (UTF-8 is the most common).
+      - viewport: Ensures the page is responsive and scales properly on all devices.
+    -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1s0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      ====================
+      Title of the Webpage
+      ====================
+      - The title appears in the browser tab and is used for SEO.
+    -->
     <title>DOM | Amit</title>
   </head>
+
+  <!--
+    ====================
+    Body of the Webpage
+    ====================
+    - The body contains the visible content of the webpage.
+    - Inline styles are used to set the background color to dark gray (#212121) and text color to white (#fff).
+  -->
   <body style="background-color: #212121; color: #fff">
+    <!--
+      ====================
+      Div Elements
+      ====================
+      - A parent div with class "parent" (empty for now).
+      - Four child divs with class "day", each containing a day of the week.
+    -->
     <div class="parent"></div>
     <div class="day">Monday</div>
     <div class="day">Tuesday</div>
     <div class="day">Wednesday</div>
     <div class="day">Thursday</div>
+
+    <script>
+      /*
+        ====================
+        Selecting the Parent Element
+        ====================
+        - document.querySelector(".parent"): Selects the first element with the class "parent".
+        - The selected element is stored in the `parent` variable.
+      */
+      const parent = document.querySelector(".parent");
+
+      /*
+        ====================
+        Accessing Children of the Parent Element
+        ====================
+        - parent.children: Returns an HTMLCollection of all child elements of the parent.
+        - console.log(parent.children): Logs the HTMLCollection to the console.
+      */
+      console.log(parent.children);
+
+      /*
+        ====================
+        Accessing Inner HTML of a Specific Child
+        ====================
+        - parent.children[1].innerHTML: Accesses the inner HTML of the second child (index 1).
+        - console.log(parent.children[1].innerHTML): Logs "Tuesday" to the console.
+      */
+      console.log(parent.children[1].innerHTML);
+
+      /*
+        ====================
+        Looping Through All Children
+        ====================
+        - A for loop is used to iterate through all child elements of the parent.
+        - console.log(parent.children[i].innerHTML): Logs the inner HTML of each child.
+      */
+      for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+      }
+
+      /*
+        ====================
+        Styling a Specific Child
+        ====================
+        - parent.children[1].style.color = "orange": Changes the text color of the second child to orange.
+      */
+      parent.children[1].style.color = "orange";
+
+      /*
+        ====================
+        Accessing First and Last Child Elements
+        ====================
+        - parent.firstElementChild: Returns the first child element of the parent.
+        - parent.lastElementChild: Returns the last child element of the parent.
+        - console.log(parent.firstElementChild): Logs the first child element.
+        - console.log(parent.lastElementChild): Logs the last child element.
+      */
+      console.log(parent.firstElementChild);
+      console.log(parent.lastElementChild);
+
+      /*
+        ====================
+        Selecting a Day Element
+        ====================
+        - document.querySelector(".day"): Selects the first element with the class "day".
+        - The selected element is stored in the `dayOne` variable.
+      */
+      const dayOne = document.querySelector(".day");
+      console.log(dayOne);
+
+      /*
+        ====================
+        Accessing Parent and Sibling Elements
+        ====================
+        - dayOne.parentElement: Returns the parent element of `dayOne`.
+        - dayOne.nextElementSibling: Returns the next sibling element of `dayOne`.
+        - console.log(dayOne.parentElement): Logs the parent element.
+        - console.log(dayOne.nextElementSibling): Logs the next sibling element.
+      */
+      console.log(dayOne.parentElement);
+      console.log(dayOne.nextElementSibling);
+
+      /*
+        ====================
+        Accessing Child Nodes
+        ====================
+        - parent.childNodes: Returns a NodeList of all child nodes (including text nodes and comments).
+        - console.log("NODES: ", parent.childNodes): Logs the NodeList to the console.
+      */
+      console.log("NODES: ", parent.childNodes);
+    </script>
   </body>
-  <script>
-    document.querySelector(".parent");
-    console.log(parent.children);
-    console.log(parent.children[1].innerHTML);
-    for (let index = 0; index < parent.children.length; index++) {
-      console.log(parent.children[i].innerHTML);
-    }
-    parent.children[1].style.color = "orange";
-    console.log(parent.firstElementChild);
-    console.log(parent.lastElementChild);
-
-    const dayOne = document.querySelector(".day");
-    console.log(dayOne);
-
-    console.log(dayOne.parentElement);
-    console.log(dayOne.nextElementSibling);
-
-    console.log("NODES: ", parent.childNodes);
-  </script>
 </html>
