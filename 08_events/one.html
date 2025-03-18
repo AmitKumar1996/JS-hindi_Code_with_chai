@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--
+      ====================
+      Meta Tags
+      ====================
+      - charset="UTF-8": Specifies the character encoding for the document (UTF-8 is the most common).
+      - viewport: Ensures the page is responsive and scales properly on all devices.
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      ====================
+      Title of the Webpage
+      ====================
+      - The title appears in the browser tab and is used for SEO.
+    -->
     <title>HTML Events</title>
   </head>
   <body style="background-color: #414141; color: aliceblue">
+    <!--
+      ====================
+      Heading
+      ====================
+      - Displays a heading for the page.
+    -->
     <h2>Amazing image</h2>
+
+    <!--
+      ====================
+      Image List
+      ====================
+      - A list of images with unique IDs.
+    -->
     <div>
       <ul id="images">
         <li>
@@ -60,14 +87,7 @@
     //   alert("Owl Click");
     // };
 
-    // method 3
-    // attachEvent()
-    // jQuery - on addEventListener
-    // what is types, timestamp, defaultPrevented,
-    // what is target , toElement, srcElement, currentTarget
-    //what is  clientX, ClientY, ScreenX, ScreenY
-    //what is altKey, ctrlKey, shiftkey, KeyCode
-
+    // Method 3: Using addEventListener
     document.getElementById("images").addEventListener(
       "click",
       function (e) {
@@ -83,11 +103,12 @@
       },
       false
     );
+
     document.getElementById("google").addEventListener(
       "click",
       function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+        e.preventDefault(); // Prevents the default action (navigating to Google)
+        e.stopPropagation(); // Stops the event from bubbling up
         console.log("google clicked");
       },
       false
