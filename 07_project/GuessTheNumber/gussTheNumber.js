@@ -82,7 +82,7 @@ function checkGuss( guess )
 function displayGuess( guess )
 { 
     userInput.value = ''
-    guessSlot.innerHTML += `${ guess }`
+    guessSlot.innerHTML += `${ guess } `;
     numGuess++;
     remaning.innerHTML = `${11 - numGuess}`
 }
