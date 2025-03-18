@@ -86,8 +86,8 @@
     document.getElementById("google").addEventListener(
       "click",
       function (e) {
+        e.preventDefault();
         console.log("google clicked");
-        e.defaultPrevented();
       },
       false
     );
