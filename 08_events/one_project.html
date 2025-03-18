@@ -84,5 +84,29 @@
       </ul>
     </div>
   </body>
-  <script></script>
+  <script>
+    // Add a click event listener to the #images container
+    document.querySelector("#images").addEventListener(
+      "click",
+      function (e) {
+        // Log the tag name of the clicked element
+        console.log(e.target.tagName);
+
+        // Check if the clicked element is an image
+        if (e.target.tagName === "IMG") {
+          // Log the ID of the clicked image
+          console.log(e.target.id);
+
+          // Remove the parent <li> of the clicked image
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+        }
+
+        // Remove the parent <li> of the clicked element (commented out)
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+      },
+      false
+    );
+  </script>
 </html>
