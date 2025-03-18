@@ -87,6 +87,7 @@
       "click",
       function (e) {
         e.preventDefault();
+        e.stopPropagation();
         console.log("google clicked");
       },
       false
