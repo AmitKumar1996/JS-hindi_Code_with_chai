@@ -14,7 +14,7 @@
 
 # Event Images
 
-Here are the event images:
+Here are the event Notes:
 
 ![Image 1](08_events/img_1.png)
 ![Image 2](08_events/img_2.png)
