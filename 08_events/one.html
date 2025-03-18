@@ -68,10 +68,18 @@
     //what is  clientX, ClientY, ScreenX, ScreenY
     //what is altKey, ctrlKey, shiftkey, KeyCode
 
+    document.getElementById("images").addEventListener(
+      "click",
+      function (e) {
+        console.log("clicked inside the URL");
+      },
+      false
+    );
+
     document.getElementById("owl").addEventListener(
       "click",
       function (e) {
-        console.log(e);
+        console.log("owl clicked");
       },
       false
     );
