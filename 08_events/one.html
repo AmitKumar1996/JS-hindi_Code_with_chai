@@ -59,5 +59,21 @@
     // document.getElementById("owl").onclick = function () {
     //   alert("Owl Click");
     // };
+
+    // method 3
+    // attachEvent()
+    // jQuery - on addEventListener
+    // what is types, timestamp, defaultPrevented,
+    // what is target , toElement, srcElement, currentTarget
+    //what is  clientX, ClientY, ScreenX, ScreenY
+    //what is altKey, ctrlKey, shiftkey, KeyCode
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (e) {
+        console.log(e);
+      },
+      false
+    );
   </script>
 </html>
