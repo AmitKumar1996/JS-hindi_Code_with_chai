@@ -10,6 +10,19 @@ const gussSlot = document.querySelector( '.guesses' )
 const remaning = document.querySelector( '.lastResult' )
 
 
+const lowOrHi = document.querySelector( '.lowOrHi' )
+
+
+const startOver = document.querySelector( '.resultParas' )
+
+const p = document.querySelector( 'p' )
+
+let prevGuess = []
+
+
+
+
+
 
 
 
