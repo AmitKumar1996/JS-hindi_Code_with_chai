@@ -9,4 +9,23 @@ const randomColor = function ()
     }
     return color;
 };
-console.log( randomColor() );
+let intervalId;
+const satrChangingColor = function ()
+{
+    if ( !intervalId )
+    {
+        intervalId = setInterval( changeBgColor, 50 )
+    }
+    function changeBgColor()
+    {
+        document.body.style.backgroundColor = randomColor();
+    }
+};
+const stopChangingColor = function ()
+{
+    clearInterval( intervalId );
+    intervalId = null;
+
+};
+document.querySelector( "#start" ).addEventListener( 'click', satrChangingColor )
+document.querySelector( "#stop" ).addEventListener( 'click', stopChangingColor )
