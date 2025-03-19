@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!--
+      ====================
+      Meta Tags
+      ====================
+      - charset="UTF-8": Specifies the character encoding for the document (UTF-8 is the most common).
+      - viewport: Ensures the page is responsive and scales properly on all devices.
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      ====================
+      Title of the Webpage
+      ====================
+      - The title appears in the browser tab and is used for SEO.
+    -->
     <title>Document</title>
-</head>
-<body style="background-color: #212121;">
-    0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
-</body>
-<script>
-    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+  </head>
+  <body style="background-color: hsl(0, 22%, 96%)">
+    <!--
+      ====================
+      Ready State Information
+      ====================
+      - Displays information about the ready states of an XMLHttpRequest.
+    -->
+    0 UNSENT Client has been created. open() not called yet.
+    1 OPENED open() has been called.
+    2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+    3 LOADING Downloading; responseText holds partial data.
+    4 DONE The operation is complete.
+  </body>
+  <script>
+    // Define the API endpoint
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+
+    // Create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestUrl)
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
-        if (xhr.readyState === 4) {
-            const data = JSON.parse(this.responseText)
-            console.log(typeof data);
-            console.log(data.followers);
-        }
-    }
+
+    // Open a GET request to the specified URL
+    xhr.open("GET", requestUrl);
+
+    // Define the onreadystatechange event handler
+    xhr.onreadystatechange = function () {
+      // Log the current ready state
+      console.log(xhr.readyState);
+
+      // Check if the request is complete (readyState === 4)
+      if (xhr.readyState === 4) {
+        // Parse the response text as JSON
+        const data = JSON.parse(this.responseText);
+
+        // Log the type of the parsed data
+        console.log(typeof data);
+
+        // Log the number of followers from the response
+        console.log(data.followers);
+      }
+    };
+
+    // Send the request
     xhr.send();
-</script>
+  </script>
 </html>
