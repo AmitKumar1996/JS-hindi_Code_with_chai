@@ -9,5 +9,4 @@ const randomColor = function ()
     }
     return color;
 };
-console.log(randomColor);
- 
+console.log( randomColor() );
