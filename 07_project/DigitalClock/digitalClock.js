@@ -1,6 +1,7 @@
-const clock = document.getElementById('clock');
+const clock = document.getElementById( 'clock' );
 
-setInterval(function () {
+setInterval( function ()
+{
   // Create a new Date object
   let date = new Date();
 
@@ -9,8 +10,8 @@ setInterval(function () {
   const currentTime = date.toLocaleTimeString();
 
   // Combine the date and time into a single string
-  const dateTimeString = `${currentDate} ${currentTime}`;
+  const dateTimeString = `${ currentDate } ${ currentTime }`;
 
   // Update the innerHTML of the clock element
   clock.innerHTML = dateTimeString;
-}, 1000);
+}, 1000 );
