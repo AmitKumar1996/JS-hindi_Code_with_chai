@@ -19,3 +19,8 @@ Here are the event Notes:
 ![Image 1](08_events/img_1.png)
 ![Image 2](08_events/img_2.png)
 ![Image 3](08_events/img_3.png)
+
+
+Promises
+
+![Image 1](09_advanced_one/promises.png)
