@@ -24,3 +24,6 @@ Here are the event Notes:
 Promises
 
 ![Image 1](09_advanced_one/promises.png)
+
+Fetch
+![Image 1](09_advanced_one/fetch.jpg)
