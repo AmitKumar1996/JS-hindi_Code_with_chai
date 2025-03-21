@@ -37,7 +37,7 @@ OOP (Object-Oriented Programming)
 
 // 1. Abstraction:
 //    - Hiding complex implementation details and showing only the necessary features.
-//    - Example: Using a function to perform a task without knowing its internal logic.
+//    - Example: Using a function to perform a task without knowing its internal logic.eg:- TV Remote
 
 // 2. Encapsulation:
 //    - Wrapping data and methods into a single unit (e.g., a class).
