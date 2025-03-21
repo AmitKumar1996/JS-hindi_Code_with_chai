@@ -173,11 +173,11 @@ Interview Questions
 // 8. What is polymorphism in JavaScript?
 //    - Polymorphism allows a method to behave differently based on the object that calls it.
 
-/*
+
 ==================================================
 Best Practices
 ==================================================
-*/
+
 
 // 1. Use classes for better code organization and readability.
 // 2. Use encapsulation to hide implementation details.
