@@ -27,3 +27,6 @@ Promises
 
 Fetch
 ![Image 1](09_advanced_one/fetch.jpg)
+
+Prototype
+![Image 1](10_classes_and_oop/prototype.png)
