@@ -1,18 +1,18 @@
-const accountId= 144553
+const accountId = 144553
 let accountEmailId = "hitesh@gmail.com"
 var accountPassword = "12345"
 accountCity = "Jaipur"
 //accountId = 2   //Not allowed
 
-accountEmailId ="hello@gamil.com"
-console.log(accountId);
+accountEmailId = "hello@gamil.com"
+console.log( accountId );
 /*
 
 prefer not use var  because of issue in block scope and functional scope
 */
 
 let accountState;
-console.table([accountId, accountEmailId, accountPassword, accountState])
+console.table( [ accountId, accountEmailId, accountPassword, accountState, accountCity ] )
 
 
 
@@ -42,7 +42,7 @@ NOTES:
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 // ---- Variable Hoisting ----
-console.log(a); // Undefined (Declaration is hoisted, but not initialization)
+console.log( a ); // Undefined (Declaration is hoisted, but not initialization)
 var a = 10;
 
 // let & const are hoisted but in Temporal Dead Zone (TDZ)
@@ -52,14 +52,16 @@ const c = 30;
 
 // ---- Function Hoisting ----
 greet(); // Works because function declarations are hoisted
-function greet() {
-    console.log("Hello, Hoisting!");
+function greet()
+{
+    console.log( "Hello, Hoisting!" );
 }
 
 // Function expressions are NOT hoisted
 // sayHello(); // TypeError: sayHello is not a function
-var sayHello = function() {
-    console.log("Hi!");
+var sayHello = function ()
+{
+    console.log( "Hi!" );
 };
 
 // ====== Summary ======
