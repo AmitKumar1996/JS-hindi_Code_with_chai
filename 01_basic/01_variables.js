@@ -42,19 +42,38 @@ NOTES:
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 // ---- Variable Hoisting ----
-console.log( a ); // Undefined (Declaration is hoisted, but not initialization)
+
+console.log(a); // undefined (declaration hoisted)
 var a = 10;
 
-
-
 var x;
-console.log( x );
+console.log(x); // undefined
 x = 10000;
 
-// let & const are hoisted but in Temporal Dead Zone (TDZ)
-// console.log(b); // ReferenceError: Cannot access 'b' before initialization
+// let & const are hoisted but in TDZ — can't access before initialization
 let b = 20;
 const c = 30;
+
+// Variable assigned before declaration — works due to var hoisting
+p = 1001;
+console.log(p); // 1001
+var p;
+
+let blockScopedVarOutput;
+{
+    let blockScopedVar = "I am block scoped";
+    blockScopedVarOutput = blockScopedVar;
+}
+
+// 🧾 Summary using console.table
+console.table([
+  { Name: "a",      Type: "var",   AccessBeforeInit: "undefined",     Notes: "Hoisted; declared later" },
+  { Name: "x",      Type: "var",   AccessBeforeInit: "undefined",     Notes: "Declared then used" },
+  { Name: "b",      Type: "let",   AccessBeforeInit: "Error",         Notes: "TDZ - Cannot access before init" },
+  { Name: "c",      Type: "const", AccessBeforeInit: "Error",         Notes: "TDZ - Cannot access before init" },
+  { Name: "p",      Type: "var*",  AccessBeforeInit: "1001",          Notes: "Assigned before var declaration" },
+  { Name: "blockScopedVar", Type: "let", AccessBeforeInit: blockScopedVarOutput, Notes: "Scoped within block" }
+]);
 
 // ---- Function Hoisting ----
 greet(); // Works because function declarations are hoisted
