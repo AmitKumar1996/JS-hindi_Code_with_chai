@@ -1,11 +1,23 @@
-let score = "33a"
+// Declare a variable 'score' and assign a string value "33a"
+let score = "33a";
 
-console.log(typeof score)
-console.log(typeof(score));
+// typeof is used to check the data type of a variable
+console.log(typeof score);        // Output: "string"
+// Reason: 'score' is assigned a string, so typeof returns "string"
 
-let valueInNumber = Number(score)
-console.log(typeof valueInNumber);
-console.log(valueInNumber);
+console.log(typeof(score));       // Output: "string"
+// Reason: typeof is an operator, not a function, but parentheses are allowed
+
+// Convert 'score' to a number using the Number() constructor
+let valueInNumber = Number(score);
+
+// Check the type of the result after conversion
+console.log(typeof valueInNumber);  // Output: "number"
+// Reason: In JavaScript, NaN (Not a Number) is still of type "number"
+
+// Print the actual value
+console.log(valueInNumber);         // Output: NaN
+// Reason: "33a" cannot be fully parsed as a number, so Number("33a") gives NaN
 
 
 // "33" => 33
