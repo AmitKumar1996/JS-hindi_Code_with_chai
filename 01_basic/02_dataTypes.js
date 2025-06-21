@@ -8,11 +8,13 @@
 console.log( 3 + 3 );
 console.log( "Amit Kumar" );
 
+console.log("========== Data Types in JavaScript ==========");
+
 
 // =========================
 // Data Types in JavaScript
 // =========================
-// 1. Primitive Data Types
+// 1. Primitive Data Types-> B^2 , N^2 , S^2 , U
 // -----------------------
 // - number => 2^53
 // - bigint
@@ -43,6 +45,8 @@ console.log( "Amit Kumar" );
 // - dataview => new DataView()
 // - typedarray => new Int8Array(), Uint8Array(), etc.
 
+console.log("========== typeof Operator Examples ==========");
+
 
 // =========================
 // typeof Operator Examples
@@ -60,6 +64,8 @@ console.log( typeof -Infinity );  // number
 console.log( typeof 0 );          // number
 console.log( typeof 1 );          // number
 
+
+console.log("========== typeof for Different Objects ==========");
 
 // =========================
 // typeof for Different Objects
@@ -87,6 +93,8 @@ console.log( typeof new Int32Array() );   // object
 console.log( typeof new Uint32Array() );  // object
 console.log( typeof new Float32Array() ); // object
 console.log( typeof new Float64Array() ); // object
+
+console.log("========== Console Table Examples ==========");
 
 // =========================
 // Console Table Examples
