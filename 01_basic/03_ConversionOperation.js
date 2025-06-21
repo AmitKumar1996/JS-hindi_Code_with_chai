@@ -25,20 +25,28 @@ console.log(valueInNumber);         // Output: NaN
 // true => 1; false => 0
 
 
+let isLoggedIn1 = 1;
+
+let boolenIsLoggedIn1 = Boolean(isLoggedIn1);
+console.log(boolenIsLoggedIn1);  
+// ✅ Output: true
+// ✅ Reason: In JavaScript, 1 is a truthy value → Boolean(1) = true
+
+let isLoggedIn2 = " ";
+
+let boolenIsLoggedIn2 = Boolean(isLoggedIn2);
+console.log(boolenIsLoggedIn2);  
+// ✅ Output: true
+// ✅ Reason: A non-empty string (even a single space) is considered truthy → Boolean(" ") = true
 
 
-let isLoggedIn1 = 1
+let isLoggedIn3 = "abc";
 
-let boolenIsLoggedIn1 = Boolean(isLoggedIn1)
-console.log(boolenIsLoggedIn1);
+let boolenIsLoggedIn3 = Boolean(isLoggedIn3);
+console.log(boolenIsLoggedIn3);  
+// ✅ Output: true
+// ✅ Reason: Any non-empty string (e.g., "abc") is a truthy value → Boolean("abc") = true
 
-let isLoggedIn2 = " "
-let boolenIsLoggedIn2 = Boolean(isLoggedIn2)
-console.log(boolenIsLoggedIn2);
-
-let isLoggedIn3 = "abc"
-let boolenIsLoggedIn3 = Boolean(isLoggedIn3)
-console.log(boolenIsLoggedIn3);
 
 // 1 => true
 // 0 => false
@@ -85,26 +93,34 @@ console.log(boolenIsLoggedIn3);
 // [null, undefined, NaN, 0, "", false, true, 1, "abc", " ", "0", "1", "true", "false", "null", "undefined", "Infinity", "Infinity"] => true
 // [null, undefined, NaN, 0, "", false, true, 1, "abc", " ", "0", "1", "true", "false", "null", "undefined", "Infinity", "Infinity", "Infinity"] => true
 
+let someNumber = 33;
+let stringNumber = String(someNumber);
+console.log(stringNumber);             // Output: "33"
+console.log(typeof stringNumber);      // Output: string
+// ✅ Reason: Number 33 is converted to string → "33"
 
-let someNumber = 33
-let stringNumber = String(someNumber)
-console.log(stringNumber);
-console.log(typeof stringNumber);   // string   "33"   
+let someBoolean = true;
+let stringBoolean = String(someBoolean);
+console.log(stringBoolean);            // Output: "true"
+console.log(typeof stringBoolean);     // Output: string
+// ✅ Reason: Boolean `true` is converted to string → "true"
 
-let someBoolean = true
-let stringBoolean = String(someBoolean)
-console.log(stringBoolean);
-console.log(typeof stringBoolean);   // string   "true"
 
-let someArray = [1,2,3]
-let stringArray = String(someArray)
-console.log(stringArray);
-console.log(typeof stringArray);   // string   "1,2,3"
+let someArray = [1, 2, 3];
+let stringArray = String(someArray);
+console.log(stringArray);              // Output: "1,2,3"
+console.log(typeof stringArray);       // Output: string
+// ✅ Reason: Array is converted to string by joining elements with commas → "1,2,3"
 
-let someObject = {name: "John"}
-let stringObject = String(someObject)
-console.log(stringObject);
-console.log(typeof stringObject);   // string   "[object Object]"
+
+let someObject = { name: "John" };
+let stringObject = String(someObject);
+console.log(stringObject);             // Output: "[object Object]"
+console.log(typeof stringObject);      // Output: string
+// ✅ Reason: Object is converted to string using `toString()` → "[object Object]"
+
+
+
 // [object Object] => string
 // [object Array] => string
 // [object Number] => string
