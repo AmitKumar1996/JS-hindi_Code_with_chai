@@ -22,13 +22,13 @@ console.table( [ accountId, accountEmailId, accountPassword, accountState, accou
 📌 DIFFERENCE BETWEEN var, let, AND const
 ===========================================
 
-FEATURE                 | var               | let               | const
---------------------------------------------------------------
-SCOPE                   | Function-scoped   | Block-scoped      | Block-scoped  
-RE-DECLARATION          | ✅ Allowed        | ❌ Not Allowed    | ❌ Not Allowed  
-RE-ASSIGNMENT           | ✅ Allowed        | ✅ Allowed        | ❌ Not Allowed  
-HOISTING              | ✅ Hoisted (undefined) | ✅ Hoisted (TDZ) | ✅ Hoisted (TDZ)  
-GLOBAL OBJECT PROPERTY  | ✅ Added to window | ❌ Not added      | ❌ Not added  
+FEATURE                 | var                   | let               | const
+------------------------------------------------------------------------------------
+SCOPE                   | Function-scoped       | Block-scoped      | Block-scoped  
+RE-DECLARATION          | ✅ Allowed            | ❌ Not Allowed     | ❌ Not Allowed  
+GLOBAL OBJECT PROPERTY  | ✅ Added to window    | ❌ Not added       | ❌ Not added 
+RE-ASSIGNMENT           | ✅ Allowed            | ✅ Allowed         | ❌ Not Allowed  
+HOISTING                | ✅ Hoisted (undefined)| ✅ Hoisted (TDZ)   | ✅ Hoisted (TDZ)  
 
 NOTES:
 - TDZ (Temporal Dead Zone): `let` and `const` are hoisted but cannot be used before initialization.
@@ -44,6 +44,12 @@ NOTES:
 // ---- Variable Hoisting ----
 console.log( a ); // Undefined (Declaration is hoisted, but not initialization)
 var a = 10;
+
+
+
+var x;
+console.log( x );
+x = 10000;
 
 // let & const are hoisted but in Temporal Dead Zone (TDZ)
 // console.log(b); // ReferenceError: Cannot access 'b' before initialization
