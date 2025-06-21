@@ -219,17 +219,29 @@ console.log(typeof stringObject);      // Output: string
 // [object WebAssembly.CompileError] => string
 // [object WebAssembly.LinkError] => string
 // [object WebAssembly.RuntimeError] => string
-// [object WebAssembly.Memory] => string    
+// [object WebAssembly.Memory] => string   
 
-let someFunction = function(){}
+
+let someFunction = function() {}
 let stringFunction = String(someFunction)
-console.log(stringFunction);    // string   "function (){}" 
-console.log(typeof stringFunction);   // string   "function (){}"   
+console.log(stringFunction);             // Output: "function() {}"
+console.log(typeof stringFunction);      // Output: "string"
+// ✅ Reason:
+// When a function is passed to `String()`, it returns the **source code of the function as a string**
+
+
 
 let someSymbol = Symbol()
 let stringSymbol = String(someSymbol)
-console.log(stringSymbol);    // string   "Symbol()"
-console.log(typeof stringSymbol);   // string   "Symbol()"
+console.log(stringSymbol);              // Output: "Symbol()"
+console.log(typeof stringSymbol);       // Output: "string"
+// ✅ Reason:
+// `String(Symbol())` returns a string representation: "Symbol()".
+// But note: you **cannot concatenate** a symbol directly with a string, that throws a TypeError.
+
+
+
+
 // Symbol() => string
 // Symbol("abc") => string
 // Symbol(" ") => string
