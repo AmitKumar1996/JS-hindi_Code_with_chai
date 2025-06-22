@@ -330,6 +330,11 @@ console.log(null > undefined); // false
 console.log(null < undefined); // false
 console.log(null >= undefined); // false
 console.log(null <= undefined); // false
+console.log(undefined>undefined); // false
+console.log(undefined<undefined); // false
+console.log(undefined>=undefined); // true
+console.log(undefined<=undefined); // true  
+
 
 // Comparing Null with Empty String
 console.log(null > ''); // false

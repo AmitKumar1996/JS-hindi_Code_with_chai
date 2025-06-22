@@ -83,11 +83,14 @@ function greet()
 }
 
 // Function expressions are NOT hoisted
-// sayHello(); // TypeError: sayHello is not a function
-var sayHello = function ()
+ //sayHello(); // TypeError: sayHello is not a function
+
+
+var sayHello = function Amit()
 {
-    console.log( "Hi!" );
+    console.log( "Amit Hi!" );
 };
+Amit();
 
 // ====== Summary ======
 // ✅ var is hoisted with 'undefined'

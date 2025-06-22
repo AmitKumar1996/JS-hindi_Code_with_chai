@@ -365,7 +365,7 @@ console.log(3 % "5" + 2);    // 5
 console.log(3 ** "5" + 2);    // 245
 console.log(3 + "5" * "2");    // 13
 console.log((3 + "5") * "2");    // 16
-console.log(3+ "5"-2);    // 33
+console.log(3 + "5" - 2 );    // 33
 console.log(3 + "5" + "2");    // 352
 console.log(3 - "5" - "2");    // -4
 console.log(3 * "5" * "2");    // 30
