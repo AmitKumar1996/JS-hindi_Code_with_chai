@@ -26,10 +26,53 @@ console.log(myArr0); // Output: [0, 1, 2, 3, 4, 5]
 
 // Important Array Methods:
 myArr0.push(6);      // Adds element at the end
+console.log(myArr0); // Output: [0, 1, 2, 3, 4, 5, 6]
 myArr0.pop();        // Removes last element
+console.log(myArr0); // Output: [0, 1, 2, 3, 4, 5]
 myArr0.shift();      // Removes first element
+console.log(myArr0); // Output: [1, 2, 3, 4, 5]
 myArr0.unshift(0);   // Adds element at the beginning
-myArr0.splice(2, 1); // Removes element at index 2
+console.log(myArr0); // Output: [0, 1, 2, 3, 4, 5]
+
+// Original array for reference
+const original = [0, 1, 2, 3, 4, 5];
+
+// 1️⃣ Remove 1 element at index 2
+const arr1 = [...original];
+arr1.splice(2, 1);
+console.log("1. Remove 1 at index 2:", arr1); // [0, 1, 3, 4, 5]
+
+// 2️⃣ Remove all elements from index 2
+const arr2 = [...original];
+arr2.splice(2);
+console.log("2. Remove all from index 2:", arr2); // [0, 1]
+
+// 3️⃣ Remove 2 elements from index 1
+const arr3 = [...original];
+arr3.splice(1, 2);
+console.log("3. Remove 2 at index 1:", arr3); // [0, 3, 4, 5]
+
+// 4️⃣ Insert 99, 100 at index 2 (no deletion)
+const arr4 = [...original];
+arr4.splice(2, 0, 99, 100);
+console.log("4. Insert 99,100 at index 2:", arr4); // [0, 1, 99, 100, 2, 3, 4, 5]
+
+// 5️⃣ Replace 2 elements at index 2 with 99, 100
+const arr5 = [...original];
+arr5.splice(2, 2, 99, 100);
+console.log("5. Replace 2 items with 99,100:", arr5); // [0, 1, 99, 100, 4, 5]
+
+// 6️⃣ Remove all elements (clear array)
+const arr6 = [...original];
+arr6.splice(0);
+console.log("6. Remove all elements:", arr6); // []
+
+// 7️⃣ Remove last 2 elements using negative index
+const arr7 = [...original];
+arr7.splice(-2);
+console.log("7. Remove last 2 elements:", arr7); // [0, 1, 2, 3]
+
+console.log(myArr0); // Output: [0, 1, 3, 4, 5]
 console.log(myArr0); // Modified array
 //=======================================================================
 
