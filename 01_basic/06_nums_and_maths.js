@@ -5,7 +5,7 @@ console.log(score * 2); // 200
 console.log(score / 2); // 50
 console.log(score % 2); // 0
 console.log(score ** 2); // 10000
-console.log(score ** 2); // Uncaught SyntaxError: Unexpected token '**'
+//console.log(score * * 2); // Uncaught SyntaxError: Unexpected token '* *'
 console.log(score + 1 * 2); // 102
 console.log((score + 1) * 2); // 202
 
