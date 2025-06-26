@@ -71,6 +71,10 @@ console.log("6. Remove all elements:", arr6); // []
 const arr7 = [...original];
 arr7.splice(-2);
 console.log("7. Remove last 2 elements:", arr7); // [0, 1, 2, 3]
+// 8️⃣ Remove first 2 elements using negative index
+const arr8 = [...original];
+arr8.splice(0, 2);
+console.log("8. Remove first 2 elements:", arr8); // [2, 3, 4, 5]
 
 console.log(myArr0); // Output: [0, 1, 3, 4, 5]
 console.log(myArr0); // Modified array

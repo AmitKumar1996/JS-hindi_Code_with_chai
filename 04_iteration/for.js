@@ -369,6 +369,9 @@ myCoding.forEach((item) => {
     console.log(item.languageName); // Output: JavaScript, Java, Python, C++
 });
 
+
+
+
 /*
 Key Points:
 - Use `forEach` to iterate over arrays of objects and access their properties.
