@@ -358,7 +358,19 @@ console.log(3 ** "5");    // 243
 console.log(3 + "5" * 2);    // 13  
 console.log((3 + "5") * 2);    // 16
 console.log(3 + "5" + 2);    // 352 
-console.log(3 - "5" + 2);    // 02
+console.log(3 - "5" + 2);   // 0  
+// 🔍 Step-by-Step Evaluation:
+// 3 - "5"
+
+// "5" is a string, but the - operator forces JavaScript to convert it to a number.
+
+// So: 3 - 5 = -2
+
+// -2 + 2
+
+// Both are numbers.
+
+// So: -2 + 2 = 0
 console.log(3 * "5" + 2);    // 152
 console.log(3 / "5" + 2);    // 2.6
 console.log(3 % "5" + 2);    // 5
