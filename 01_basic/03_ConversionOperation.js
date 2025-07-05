@@ -371,13 +371,27 @@ console.log(3 - "5" + 2);   // 0
 // Both are numbers.
 
 // So: -2 + 2 = 0
-console.log(3 * "5" + 2);    // 152
+console.log(3 * "5" + 2);    // 17
+
+// 🔍 Step-by-Step Breakdown:
+// 3 * "5"
+
+// "5" is a string, but the * operator coerces it into a number.
+
+// So: 3 * 5 = 15
+
+// 15 + 2
+
+// Both are numbers.
+
+// So: 15 + 2 = 17
 console.log(3 / "5" + 2);    // 2.6
 console.log(3 % "5" + 2);    // 5
 console.log(3 ** "5" + 2);    // 245
 console.log(3 + "5" * "2");    // 13
-console.log((3 + "5") * "2");    // 16
+console.log((3 + "5") * "2");    // 70 "5" is a string, so 3 + "5" gives "35" (not 8).
 console.log(3 + "5" - 2 );    // 33
+console.log(2 - "5" - 3 );    // 33
 console.log(3 + "5" + "2");    // 352
 console.log(3 - "5" - "2");    // -4
 console.log(3 * "5" * "2");    // 30
