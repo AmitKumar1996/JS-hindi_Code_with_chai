@@ -391,7 +391,11 @@ console.log(3 ** "5" + 2);    // 245
 console.log(3 + "5" * "2");    // 13
 console.log((3 + "5") * "2");    // 70 "5" is a string, so 3 + "5" gives "35" (not 8).
 console.log(3 + "5" - 2 );    // 33
-console.log(2 - "5" - 3 );    // 33
+console.log(2 - "5" + 3 );    // 0
+console.log(3 * "5" - 2);    // 13
+console.log(3 / "5" - 2);    // -1.4
+console.log(3 % "5" - 2);    // 1
+console.log(3 ** "5" - 2);    // 241
 console.log(3 + "5" + "2");    // 352
 console.log(3 - "5" - "2");    // -4
 console.log(3 * "5" * "2");    // 30
